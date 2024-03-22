@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+    <script src="/intertec/js/funcion.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Datos Generales</h5>
+					</div>
+					<!-- tarjeta-->
+					<div class="card-body">    
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-14 table-responsive">
+									<table class="table table-hover table-bordered table-sm">
+										<tr>
+											<td class="bg-light" align="center">
+												<div id="foto">									  
+													<img src="<%miurl%>.jpg" width="95" height="115" border="0">
+												</div>
+											</td>
+											<td align="center"><strong><%cSubir%></strong><p>Tamaño Infantil<p>3x2.5 cm(115x95 px)</td>
+											<td class="bg-light" colspan="2"></td>											
+											<td align="center">
+												<button class="btn btn-outline-secondary btn-sm" style="white-space: initial;" style="cursor:hand;" onClick="javascript:window.location='<%qrdoc%>'"><img src="<%qrima%>" width="100" height="100"></button>
+											</td> 
+											<td class="bg-light" align="center"><strong>IDENTIFICACIÓN</strong></td>									
+										</tr>
+										<tr>
+											<td class="bg-light">No. Control</td><td><strong><%cusuario%></strong></td>
+											<td class="bg-light">Nombre</td><td><strong><%tnom%></strong></td>
+											<td class="bg-light">CURP</td><td><strong><%tcur%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Extensión</td><td><strong><%text%></strong></td>
+											<td class="bg-light">Modalidad</td><td><strong><%tsis%></strong></td>
+											<td class="bg-light">Carrera</td><td><strong><%tcar%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Plan de Estudios</td><td colspan="2"><strong><%tpla%></strong></td>
+											<td class="bg-light">Módulo de Especialidad</td><td colspan="2"><strong><%tesp%></strong></td>
+										</tr>								
+										<tr>
+											<td class="bg-light">Tutor</td><td colspan="5"><strong><%tupern%></strong></td>
+										</tr>
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->						
+						<!-- Segunda sección -->
+						<div class="row">
+							<!-- datos personales -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos personales</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Calle</label>
+												<p class="card-text"><%tcll%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">No</label>
+												<p class="card-text"><%tnum%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Colonia</label>
+												<p class="card-text"><%tcol%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Ciudad</label>
+												<p class="card-text"><%tciu%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Cp</label>
+												<p class="card-text"><%tcpo%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Teléfonos</label>
+												<p class="card-text"><%tte1%> - <%tte2%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Correo E. Personal</label>
+												<p class="card-text"><%tmai%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Correo E. Institucional</label>
+												<p class="card-text"><%tmaii%></p>
+											</div>								
+										</div>                             
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Fecha de Nacimiento</label>
+												<p class="card-text"><%tnac%></p>
+											</div>
+										</div>                             
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos personales -->
+							<!-- Datos académicos -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos Académicos</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">Escuela de Procedencia</label>
+												<p class="card-text"><%tesc%></p>
+											</div>                                
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Periodo de Ingreso</label>
+												<p class="card-text"><%ting%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Periodos Validados</label>
+												<p class="card-text"><%tnpec%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Periodo Actual o último</label>
+												<p class="card-text"><%tnpe%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Créditos Acumulados</label>
+												<p class="card-text"><%tcac%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Situación</label>
+												<p class="card-text"><%tsit%></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos académicos -->
+						</div>
+						<!-- Fin Segunda sección -->						
+						<!-- botón modificar datos -->
+						<div class="row">
+							<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+								<div class="col-md-12 text-center">
+									<br>
+									<%cBoton%>
+								</div>
+							</form>
+						</div>
+						<!-- Fin botón modificar datos -->
+					</div>
+					<!-- termina cuerpo de la tarjeta-->
+				</div>
+            </div>
+        </div>
+    </div>
+<!--
+<%cMensaje%>
+-->
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Aspirantes</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link href="/intertec/css/CalendarControl.css"      rel="stylesheet" type="text/css">
+	<script src="/intertec/js/CalendarControl.js"        language="javascript"></script>
+	<script language="Javascript" src="/intertec/js/refrescar.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+
+<style>body{bg-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="bg-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci&oacuten Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Actualizar Datos del Aspirante</h5>
+					</div>			
+					<!-- cuerpo de la tarjeta-->
+					<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+					<div class="card-body">              
+						<!--start cuadro de datos superior -->
+						<div class="container">
+							<div class="row">					
+								<div class="col- table-responsive">
+									<table class="table table-bordered table-hover table-sm">
+										<tr>
+											<td colspan="3" class="bg-light">Periodo</td>
+											<td colspan="3"><strong><%tperio%></strong></td>
+											<td colspan="3" class="bg-light">CURP</td>
+											<td colspan="3"><strong><%tcur%></strong></td>										
+										</tr>									
+										<tr>
+											<td colspan="3" class="bg-light">Aspirante</td>
+											<td colspan="3"><strong><input name="tnom" class="form-control" size="30" maxlength="30" type="text" value="<%tnom%>"></strong>Nombre(s)</td>                                        
+											<td colspan="3"><strong><input name="tapp" class="form-control" size="30" maxlength="30" type="text" value="<%tapp%>"></strong>Ap.Paterno</td>
+											<td colspan="3"><strong><input name="tapm" class="form-control" size="30" maxlength="30" type="text" value="<%tapm%>"></strong>Ap.Materno</td>
+										</tr>									
+										<tr>
+											<td colspan="2" class="bg-light">Extension</td>
+											<td colspan="2"><strong><%text%></strong></td>
+											<td colspan="2" class="bg-light">Modalidad</td>
+											<td colspan="2"><strong><%tsis%></strong></td>										
+											<td colspan="2" class="bg-light">Carrera</td>
+											<td colspan="2"><strong><%tcar%></strong></td>
+										</tr>								
+										<tr>
+											<td colspan="3" class="bg-light">Preficha</td>
+											<td colspan="2"><strong><%tfic%></strong></td>
+											<td colspan="3" class="bg-light">Fecha y hora límite</td>
+											<td colspan="4"><strong><%tpfec%>&nbsp<%tphra%></strong></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- container -->
+						<!-- datos personales -->
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos personales</h6>
+									</div>
+									<div class="card-body">	
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Estado</label>
+												<%cEst%>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Municipio</label>
+												<DIV ID="divMunic">
+													<%cMun%>
+												</DIV>
+											</div>
+										</div>								
+										<div class="row">
+											<div class="col-md-8">
+												<label for="inputAbre" class="fw-bold">Calle</label>
+												<input name="tcll" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tcll%>">
+											</div>
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">No</label>
+												<input name="tnum" class="form-control" size="10" type="text" maxlength="10" VALUE="<%tnum%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Colonia</label>
+												<input name="tcol" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tcol%>">
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Ciudad</label>
+												<input name="tciu" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tciu%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Cp</label>
+												<input name="tcpo" class="form-control" size="05" type="text" maxlength="05" VALUE="<%tcpo%>">
+											</div>
+											<div class="col-md-8">
+												<label for="inputAbre" class="fw-bold">Correo Electr&oacute;nico</label>
+												<input name="tmai" class="form-control" size="40" type="text" maxlength="40" VALUE="<%tmai%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Tel&eacutefono Domicilio</label>
+												<input name="tte1" class="form-control" size="12" type="text" maxlength="12" VALUE="<%tte1%>">
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Tel&eacutefono Celular</label>
+												<input name="tte2" class="form-control" size="12" type="text" maxlength="12" VALUE="<%tte2%>">
+											</div>								
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">Tutor</label>
+												<input name="ttno" class="form-control" size="40" type="text" maxlength="40" VALUE="<%ttno%>">
+											</div>
+										</div>        
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Estado de Nacimiento</label>
+												<%cLnae%>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Municipio</label>
+												<DIV ID="divMunicN">
+													<%cLnam%>
+												</DIV>
+											</div>								
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Fecha de Nacimiento</label>
+												<input name="tnac" class="form-control" type="date" value="<%tnac%>">
+											</div>
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Estado Civil</label>
+												<%cEci%>
+											</div>																						
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Tiene Beca?</label>
+												<%cTbe%>
+											</div>
+										</div>        
+										<div class="row">
+											<div class="col-md-5">
+												<label for="inputAbre" class="fw-bold">RFC (para generar comprobantes fiscales)</label>
+												<input name="trfc" class="form-control" size="13" type="text" maxlength="13" VALUE="<%trfc%>">*Use RFC: XAXX010101000 GENERICO EN CASO DE NO ESTAR REGISTRADO
+											</div>
+											<div class="col-md-7">
+												<label for="inputAbre" class="fw-bold">Empresa. Si Trabaja</label>
+												<input name="tteotr" class="form-control" size="60" type="text" maxlength="60" VALUE="<%tteotr%>">
+											</div>								
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos personales -->
+							<!-- Datos de Procedencia -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Último Nivel de Estudio</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Escuela. Estado</label>
+												<%cEstE%>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Escuela. Municipio</label>
+												<DIV ID="divMunicE">
+													<%cMunE%>
+												</DIV>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">Escuela de Procedencia (elija municipio)</label>
+												<DIV ID="divEscue">
+													<%cEsc%>
+												</DIV>
+												<%meesc%>
+											</div>                             
+										</div>
+										<div class="row">
+											<div class="col-md-3">
+												<label for="inputAbre" class="fw-bold">Año de Egreso</label>
+												<input name="tegr" class="form-control" size="4" type="text" maxlength="4" VALUE="<%tegr%>">
+											</div>
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Promedio (Escala 100)</label>
+												<input name="tpro" class="form-control" size="3" type="text" maxlength="3" VALUE="<%tpro%>">
+											</div>
+											<div class="col-md-5">
+												<label for="inputAbre" class="fw-bold">Area</label>
+												<%cAre%>
+											</div>
+										</div>
+									</div>								
+								</div>
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos Preventivos</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">No. Imss o NSS</label>
+												<input name="tsmea" class="form-control" size="15" type="text" maxlength="15" VALUE="<%tsmea%>"><a href="https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS">OBTENER NUMERO DE SEGURIDAD SOCIAL NSS</a>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Clínica de Atención</label>
+												<input name="tsmei" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tsmei%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-3">
+												<label for="inputAbre" class="fw-bold">Tipo de Sangre</label>
+												<input name="ttsa" class="form-control" size="3" type="text" maxlength="3" VALUE="<%ttsa%>">
+											</div>
+											<div class="col-md-9">
+												<label for="inputAbre" class="fw-bold">Especifique si padece alguna alergia</label>
+												<input name="tale" class="form-control" size="60" type="text" maxlength="60" VALUE="<%tale%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">Especifique si ha tenido tratamientos en el area psicológica o psiquiátrica</label>
+												<input name="tpsi" class="form-control" size="60" type="text" maxlength="60" VALUE="<%tpsi%>">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">Discapacidad</label>
+												<%cDis%>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Otros Datos</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Grupo Indígena</label>
+												<%cGin%>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Lengua Indígena</label>
+												<%cLin%>
+											</div>
+										</div>								
+									</div>
+								</div>
+							</div>
+							<!-- Fin Datos Preventivos-->
+							<!-- boton modificar datos -->								
+							<div class="container-fluid h-100"> 
+								<div class="row w-100 align-items-center">
+									<div class="col text-center">
+										<br>
+										<%cboton%>
+										<p>VERIFIQUE QUE SUS DATOS SEAN CORRECTOS Y EN MAYUSCULAS</p>
+										<p>EL RFC SERA UTILIZADO PARA GENERAR LA FACTURA ELECTRONICA EN CASO DE SOLICITARLA</p>
+										<p>NUESTRO AVISO DE PRIVACIDAD INTEGRAL LO PODRA CONSULTAR EN NUESTRA PAGINA DEL INSTITUTO</p>								
+									</div>	
+								</div>    
+							</div>
+							<!-- Termina Boton -->
+						</div>	
+					</div>
+					</form>										
+				</div>
+				<!-- termina cuerpo de la tarjeta-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+//onChange="return validaCaptura(this,'fecha')"
+function validaCaptura(objeto,tipo)
+{   var validado=false;
+	if(tipo=='fecha') {	
+	    //validar fechas
+	    var actual=new Date().getFullYear()+1,menor=actual-80,fecha=objeto.value;
+	    if(fecha.length==10) {
+		   var year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+		   validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else if(fecha.length==8) {
+		   var year=fecha.substring(0,4), mes=fecha.substring(4,6), dia=fecha.substring(6,8);
+		   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else if(fecha.length==6) {
+		   var year=fecha.substring(0,2), mes=fecha.substring(2,4), dia=fecha.substring(4,6);
+		   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else validado=false;
+	}
+	else if(tipo=="otro")
+	{   //validar otro tipo de dato
+	    validado=true;
+	}
+	
+	if(!validado)
+	{  alert("Este dato no es válido");
+	   objeto.setFocus;
+	}
+    return validado;
+}
+function validar()
+{   var validado=false;
+    
+	//validar fecha de ingreso
+	var objeto=document.forms["forma1"]["tnac"];
+	var actual=new Date().getFullYear()+1,menor=actual-80,fecha=objeto.value;
+	//year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+	//validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	if(fecha.length==10) {
+		var year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+		validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else if(fecha.length==8) {
+	   var year=fecha.substring(0,4), mes=fecha.substring(4,6), dia=fecha.substring(6,8);
+	   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else if(fecha.length==6) {
+	   var year=fecha.substring(0,2), mes=fecha.substring(2,4), dia=fecha.substring(4,6);
+	   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else validado=false;
+	if(!validado)
+	{  alert("La fecha no es válida.");
+	   objeto.setFocus;
+	}	
+	return validado;
+}
+
+</script>
+</HTML>

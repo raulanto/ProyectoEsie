@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Clientes</title>
+     <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+   <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+<body>
+    <div role="main" class="main shop py-4">
+        <!-- Start container -->
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
+                <!-- Start Card-->
+                <div class="card">
+                    <div class="card-header bg-color-grey text-1 text-uppercase text-center">
+                        <h5>ATENCI&Oacute;N</h5><img src="/intertec/img/lock.svg" alt="icon" width="32" height="32">
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-5">
+                            <div style="text-align:center"><a href="/index.html"><img src="/intertec/img/logosie.jpg" alt="Card image cap" width="20%"></a></div>
+                        </div>
+
+                        <div class="alert alert-danger text-center mb-5" role="alert">
+                            <h5><%cAvlogin%></h5>
+                        </div>
+                        <div class="text-center mb-5">
+                            <span class="btn btn-success text-1 text-uppercase btn-lg" onclick="<%thref%>" role="button"><%thbot%></span>
+                        </div>
+
+                        
+                    </div>
+                    <div class="card-footer bg-color-grey text-1 text-uppercase text-center">
+                        Sistema de Integraci&oacute;n Escolar
+                    </div>
+                </div>
+                <!-- End Card-->
+                </div>
+                
+            </div>
+        </div>
+        <!-- End container -->
+    </div>
+
+    <!-- Footer -->
+    <nav class="navbar fixed-bottom justify-content-center navbar-expand-sm">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2022 Copyright:
+            <a href="http://esie.mx" target="_blank"> esie.mx</a>
+        </div>
+    </nav>
+    <!-- Footer -->
+</body>
+</html>

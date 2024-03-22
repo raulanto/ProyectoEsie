@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Listado de Grupos</title>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>		
+<html>
+
+<body bgcolor="#FFFFFF" bgproperties="fixed">
+<font size="3"><font color="#000000"><font face="Times New Roman, Times, serif"><cite>Grupos correspondientes al periodo:  
+<%tperio%>
+</cite></font><cite><font face="Times New Roman, Times, serif"><font color="#000000">Fecha Asignada para Reinscripción:
+<%tfecha%>
+</font></cite></font>
+<TABLE BORDER=1 WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+  <TR BGCOLOR="#0080C0" FONT COLOR="#FFFFFF"> 
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Grupo</font></TD>
+    <TD width="15%"><font size="1"><FONT COLOR=#FFFFFF>Materia</font></TD>
+    <TD width="3%"><font size="1"><FONT COLOR=#FFFFFF>Cré</font></TD>
+    <TD width="3%"><font size="1"><FONT COLOR=#FFFFFF>Paq</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Lunes</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Martes</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Miercoles</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Jueves</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Viernes</font></TD>
+    <TD width="8%"><font size="1"><FONT COLOR=#FFFFFF>Sábado</font></TD>
+    <TD width="27%"><font size="1"><FONT COLOR=#FFFFFF>Docente</font></TD>
+    <TD width="4%"><font size="1"><FONT COLOR=#FFFFFF>Plan</font></TD>
+  </TR>
+  <%cStrGrupos%>
+</TABLE>
+<font size="1"></BR></font> 
+</body>
+</html>

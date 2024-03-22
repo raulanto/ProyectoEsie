@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Depósito Referenciado del Estudiante</title>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>	
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script src="/intertec/js/JsBarcode.all.min.js"></script>
+	<script> 
+    $(function(){
+      $("#INotDeposito").load("/<%cpsie%>/notas/Deposito.html"); 
+    });
+    </script> 
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>		
+</head>
+
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Banco</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">              
+						<!--start cuadro de datos superior -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-14 table-responsive">
+									<table class="table table-hover table-bordered table-sm">
+										<tr>
+											<td class="bg-light">Estudiante</td><td><strong><%cNombre%></strong></td>
+											<td class="bg-light">No. Control</td><td colspan="3"><strong><%cUsuario%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Carrera</td><td colspan="5"><strong><%cCarrera%></strong></td>										
+										</tr>	
+										<tr>
+											<td class="bg-light">Depositar en</td><td><strong><%cBanco%></strong></td>
+											<td class="bg-light">Sucursal</td><td><strong style="font-size: 20px;"><%cSucursal%></strong></td>											
+											<td class="bg-light"><%ccuentat%></td><td><strong style="font-size: 20px;"><%cCuenta%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Concepto</td><td><strong><%cConcepto1%></strong></td>
+											<td class="bg-light">Vencimiento</td><td colspan="3"><strong><%cFecLim%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Importe</td><td colspan="5"><strong style="font-size: 20px;"><%cImporte%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Referencia</td><td colspan="5" class="text-center"><svg data-value="<%cReferencia%>" class="codigo"></svg></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--fin cuadro de datos superior -->
+					</div>
+					<!--fin cuerpo de la tarjeta -->					
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Estudiante</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">              
+						<!--start cuadro de datos superior -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-14 table-responsive">
+									<table class="table table-hover table-bordered table-sm">
+										<tr>
+											<td class="bg-light">Estudiante</td><td><strong><%cNombre%></strong></td>
+											<td class="bg-light">No. Control</td><td colspan="3"><strong><%cUsuario%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Carrera</td><td colspan="5"><strong><%cCarrera%></strong></td>										
+										</tr>	
+										<tr>
+											<td class="bg-light">Depositar en</td><td><strong><%cBanco%></strong></td>
+											<td class="bg-light">Sucursal</td><td><strong style="font-size: 20px;"><%cSucursal%></strong></td>											
+											<td class="bg-light"><%ccuentat%></td><td><strong style="font-size: 20px;"><%cCuenta%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Concepto</td><td><strong><%cConcepto1%></strong></td>
+											<td class="bg-light">Vencimiento</td><td colspan="3"><strong><%cFecLim%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Importe</td><td colspan="5"><strong style="font-size: 20px;"><%cImporte%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Referencia</td><td colspan="5" class="text-center"><strong style="font-size: 20px;"><%cReferencia%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Nota</td><td colspan="5"><strong><div id="INotDeposito"></div></strong></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--fin cuadro de datos superior -->
+					</div>
+					<!--fin cuerpo de la tarjeta -->					
+					<form>
+						<div align="center">
+							<input type="button" class="btn btn-secondary btn-lg" name="imprimir" value="Imprimir" onclick="window.print();"> 
+						<div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- fin contenido -->
+</body>
+<script>
+	JsBarcode(".codigo").options({
+		format: "CODE128A",// El formato
+		width: 1, // La anchura de cada barra
+		displayValue: true, // ¿Mostrar el valor (como texto) del código de barras?
+		fontOptions: "bold", // Opciones de la fuente del texto del barcode
+	}).init();
+</script>
+</html>

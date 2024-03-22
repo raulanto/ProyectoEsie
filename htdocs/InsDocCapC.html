@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+
+<script language=JavaScript>
+<!--
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<link href="/intertec/css/CalendarControl.css"      rel="stylesheet" type="text/css">
+<script src="/intertec/js/CalendarControl.js"        language="javascript"></script>
+</HEAD>
+
+<BODY>
+<H1><FONT COLOR="#0080c0"><CENTER>
+  Instrumentaci&oacute;n Did&aacute;ctica
+</CENTER>
+</H1>
+<CENTER>
+  <table border='1' width="80%" cellspacing=0 cellpadding=5>
+    <tr>
+      <td bgcolor="#0080c0"><font color="#ffffff">Periodo</font></td>
+      <td><%tperio%></td>
+    </tr>
+    <tr>
+      <td bgcolor="#0080c0"><font color="#ffffff">Materia</font></td>
+      <td><%tmateria%></td>
+    </tr>
+    <tr>
+      <td bgcolor="#0080c0" ><font color="#ffffff">Grupo</font></td>
+      <td><%cMateria%></td>
+    </tr>
+    <%cTemarioG%>
+  </table>
+</CENTER>
+<CENTER>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <TABLE BORDER="1" WIDTH="180%" CELLSPACING=0 CELLPADDING=0>
+    <TR>
+    <TD width="5%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Unidad</FONT></TD>
+    <TD width="25%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Competencia Especifica</FONT></TD>
+    <TD width="25%" height="20" BGCOLOR='#0080c0'><FONT COLOR="#ffffff" size=2>Actividades de Aprendizaje</font></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Actividades de Enseñanza</FONT></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Desarrollo de</FONT></TD>
+    <TD width="5%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Horas</FONT></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Criterios de</FONT></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fuentes</FONT></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Apoyos Didacticos</FONT></TD>
+    <TD width="45%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Eval</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Núm.</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Sem.</FONT></TD>
+   </TR>
+    <TR>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>De la Unidad</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2></FONT></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Competencias Genéricas</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>TeoPra</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Evaluación</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Diag</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Form</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Suma</font></TD>
+    </TR>
+    <%cTemario%>
+  </TABLE>
+  <%cTemarioBoton%>
+</form>
+</CENTER>
+<CENTER>&nbsp;</CENTER>
+</BODY></HTML>

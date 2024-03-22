@@ -1,0 +1,347 @@
+<HTML>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY>
+<H1><FONT COLOR="#0080C0"><CENTER>Proceso de Titulaci&oacute;n</CENTER></H1>
+<CENTER>
+<img src="/f<%cpsie%>/<%tfot%>"   border=0>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre del Alumno</TD>
+    <TD> 
+      <%tnom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD>
+    <TD> 
+      <%tcar%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Opci&oacute;n</TD>
+    <TD> 
+      <%topc%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Tecnol&oacute;gico</TD>
+    <TD> 
+      <%ttec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Tema</TD>
+    <TD> 
+      <%ttem%>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+<H1><FONT COLOR="#0080C0"><CENTER>Expediente</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Apertura del Expediente</TD>
+    <TD> 
+      <%texp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Recibo de pago de Apertura</TD>
+    <TD> 
+      <%trexp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Formato de solicitud de tr&aacute;mite de reg.t&iacute;tulo y c&eacute;dula</TD>
+    <TD> 
+      <%tdfor%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Acta de Nacimiento</TD>
+    <TD> 
+      <%tdact%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Certificado de Bachillerato</TD>
+    <TD> 
+      <%tdcba%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Certificado de Licenciatura</TD>
+    <TD> 
+      <%tdcli%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Constancia de Liberaci&oacute;n de Servicio Social</TD>
+    <TD> 
+      <%tdcss%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Constancia de Liberaci&oacute;n de Pr&aacute;cticas o Residencias</TD>
+    <TD> 
+      <%tdcre%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Constancia de Liberaci&oacute;n de Idioma Ingl&eacute;s</TD>
+    <TD> 
+      <%tdcin%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Constancia de No Adeudo con la Instituci&oacute;n</TD>
+    <TD> 
+      <%tdcna%>
+    </TD>
+  </TR>
+
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">5 fot. infantil b/n papel mate fondo blanco</TD>
+    <TD> 
+      <%tdfoi%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">4 fot. filiaci&oacute;n b/n de frente con retoque papel mate f.blanco</TD>
+    <TD> 
+      <%tdfof%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Acta de Ex&aacute;men Profesional</TD>
+    <TD> 
+      <%tdaep%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Recibo de tr&aacute;mite de registro y exped. De c&eacute;dula</TD>
+    <TD> 
+      <%trtra%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Recibo de Compulsa de documentos</TD>
+    <TD> 
+      <%trcom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Recibo de rotulaci&oacute;n de pergaminos</TD>
+    <TD> 
+      <%trrot%>
+    </TD>
+  </TR>
+</TABLE>
+<H1><FONT COLOR="#0080C0"><CENTER>Programaci&oacute;n</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha</TD>
+    <TD> 
+      <%tprofec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Hora</TD>
+    <TD> 
+      <%tprohra%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Presidente</TD>
+    <TD> 
+      <%tpropre%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Secretario</TD>
+    <TD> 
+      <%tprosec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Vocal</TD>
+    <TD> 
+      <%tprovoc%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Vocal Suplente</TD>
+    <TD> 
+      <%tprovocs%>
+    </TD>
+  </TR>
+</TABLE>
+<H1><FONT COLOR="#0080C0"><CENTER>Acto Recepcional</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Expedici&oacute;n del Acta</TD>
+    <TD> 
+      <%tactexp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Registrado en libro</TD>
+    <TD> 
+      <%tactlib%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">               Fojas</TD>
+    <TD> 
+      <%tactfoj%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Autorizaci&oacute;n de Libro de Registro</TD>
+    <TD> 
+      <%tactaut%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Acto Recepcional</TD>
+    <TD> 
+      <%tactfec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Hora de Acto Recepcional</TD>
+    <TD> 
+      <%tacthra%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Presidente</TD>
+    <TD> 
+      <%tactpre%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Secretario</TD>
+    <TD> 
+      <%tactsec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Vocal</TD>
+    <TD> 
+      <%tactvoc%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Resultado</TD>
+    <TD> 
+      <%tactres%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Hora de Terminaci&oacute;n del Ex&aacute;men</TD>
+    <TD> 
+      <%tacthrat%>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+<H1><FONT COLOR="#0080C0"><CENTER>T&iacute;tulo</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Expedici&oacute;n</TD>
+    <TD> 
+      <%ttitexp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Registrado: Folio</TD>
+    <TD> 
+      <%ttitfol%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">            libro</TD>
+    <TD> 
+      <%ttitlib%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">            Fojas</TD>
+    <TD> 
+      <%ttitfoj%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">            Fecha</TD>
+    <TD> 
+      <%ttitfec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Folio del Documento</TD>
+    <TD> 
+      <%ttitfold%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Certificaci&oacute;n Global</TD>
+    <TD> 
+      <%tcerg%>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+<H1><FONT COLOR="#0080C0"><CENTER>Tr&aacute;mite de Expedici&oacute;n de C&eacute;dula</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Envío a DGEST</TD>
+    <TD> 
+      <%ttraenvd%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Regreso de DGEST</TD>
+    <TD> 
+      <%ttraregd%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Envio a Profesiones</TD>
+    <TD> 
+      <%ttraenvp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Fecha de Regreso de Profesiones</TD>
+    <TD> 
+      <%ttraregp%>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+</BODY></HTML>

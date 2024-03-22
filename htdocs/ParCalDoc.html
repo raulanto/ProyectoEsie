@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+  content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+  <title>LISTA DE CALIFICACIONES</title>
+</head>
+
+
+<body bgcolor="#ffffff" bgproperties="fixed">
+
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Periodo</FONT></TD><TD><%tperio%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Plan</FONT></TD><TD><%tplan%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Materia</FONT></TD><TD><%tmateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Grupo</FONT></TD><TD><%cMateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><P><FONT COLOR="#ffffff">Unidad</FONT></P></TD><TD><%cUnidad%></TD></TR>
+</TABLE>
+<ADDRESS><FONT size=2>R=Repite Curso(RE=Repite ES=Especial) -- D=Deserción(Se indica con *)</FONT></ADDRESS>
+<ADDRESS><FONT size=2>O=Opción(0=No Presentó 1=Primera Evaluación 2=Segunda o Complementaría)</FONT></ADDRESS>
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <TABLE BORDER='1' WIDTH="100%" CELLSPACING=0 CELLPADDING=5>
+    <%cEncab%>
+    <%clistaDoc%>
+</form>
+<font size="1"><BR> </font> 
+</body>
+
+<script>
+    function ActualizaTipo(donde,renglon)
+	{   if (donde==0)    
+            {  var objeto=document.forms["forma1"]["tcali"][renglon-1];
+	       if(objeto.value=="0") objeto.value="1";            
+               var objeto2=document.forms["forma1"]["calif"][renglon-1];
+               objeto2.style.color='blue';
+	       objeto2.style.border="inset blue 1px";
+            }
+            else
+            {  var objeto=document.getElementById("t"+renglon);
+	       if(objeto.value<"2") objeto.value="2";            
+               var objeto2=document.getElementById("c"+renglon);
+               objeto2.style.color='blue';
+	       objeto2.style.border="inset blue 1px";
+            }
+	}
+</script>
+</html>

@@ -1,0 +1,54 @@
+<HTML>
+<BODY>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<H2><FONT COLOR="#0080C0"><CENTER>Ubicación del Docente del Periodo: <b><%tperio%></b></CENTER></H2>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>Nombre<TD><%tnom%></TR>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>Departamento en Estructura Orgánica<TD><%tdep%></TR>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>Puesto en Estructura Orgánica<TD><%tpue%></TR>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>Correo Electrónico<TD><%tdce%></TR>
+</TABLE>
+<BR>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=5>
+	<TR BGCOLOR="#0080C0">
+		<TD width="10%" height="20"><FONT COLOR=#FFFFFF>Día</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>0700</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>0800</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>0900</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1000</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1100</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1200</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1300</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1400</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1500</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1600</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1700</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1800</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>1900</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>2000</TD>
+		<TD width="06%" height="20"><FONT COLOR=#FFFFFF>2100</TD>
+       </TR>
+<%cUbicaDoc%>
+</TABLE>
+</BODY>
+</HTML>

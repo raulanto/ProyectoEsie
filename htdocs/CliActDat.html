@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+</HEAD>
+
+<BODY>  
+<h1 align="center">Datos Principales</h1>
+<form method="post" onSubmit="return validar()" action="/cgi-bin/sie.pl" name="forma1">  
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre</TD>
+    <TD><input name="tnom" size="80" type="text" maxlength="80" VALUE="<%tnom%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">RFC</TD>
+    <TD><input name="trfc" size="15" type="text" maxlength="13" VALUE="<%trfc%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">CURP</TD>
+    <TD><input name="tcur" size="20" type="text" maxlength="18" VALUE="<%tcur%>"></TD>
+  </TR>
+</TABLE>
+
+<h1 align="center">Domicilio Actual</h1>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Calle</TD>
+    <TD><input name="tcll" size="40" type="text" maxlength="40" VALUE="<%tcll%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Número</TD>
+    <TD><input name="tnum" size="10" type="text" maxlength="10" VALUE="<%tnum%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Colonia</TD>
+    <TD><input name="tcol" size="30" type="text" maxlength="30" VALUE="<%tcol%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Ciudad</TD>
+    <TD><input name="tciu" size="30" type="text" maxlength="30" VALUE="<%tciu%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">C.P.</TD>
+    <TD><input name="tcpo" size="05" type="text" maxlength="05" VALUE="<%tcpo%>"></TD>
+  </TR>
+  <TR>     
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado</TD>
+    <TD><%cEst%></TD>
+  </TR>    
+  <TR>
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Municipio</TD>
+    <TD>
+      <DIV ID="divMunicD">
+      <%cMun%>
+      </DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Teléfono (con LADA)</TD>
+    <TD><input name="ttel" size="13" type="text" maxlength="13" VALUE="<%ttel%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Correo Electrónico (minúsculas)</TD>
+    <TD><input name="tmai" size="40" type="text" maxlength="40" VALUE="<%tmai%>"></TD>
+  </TR> 
+</TABLE>
+<%cActDatos%>
+</form>
+</CENTER>
+</BODY>
+</HTML>

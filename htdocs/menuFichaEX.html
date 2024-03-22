@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Aspirantes</title>
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>
+    body{background-color: <%dinsti.swmenb%>}
+</style>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 mt-1 mt-lg-0">
+                <div class="list-group" style="display:flex;width: 100%;">
+                    <a href="#" class="list-group-item" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">ACCESOS</a>
+					<%cmenu%>
+                    <span class="btn btn-outline btn-light rounded-0 mb-2" style="white-space: initial; cursor:hand; text-align:left; color:<%dinsti.swmenc%>" onClick="javascript:parent.principal.location='/cgi-bin/sie.pl?Opc=CSESIONDOC&amp;Control=<%cUsuario%>&amp;Password=<%cPassword%>&amp;dummy=0'"><strong>Salir</strong></span>
+                </div>  
+                <div class="py-5 mt-5 text-center" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+                    <span class="mb-4" style="white-space: initial;"><strong>Hoy es un d&iacute;a perfecto! </strong> para mejorar!</span>
+                </div>
+            </div>
+        </div>
+         <!-- Footer -->
+		<nav class="navbar fixed-bottom navbar-light justify-content-center">
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3" style="color: <%dinsti.swtabc%>">&copy; 2022 Copyright:
+				<a href="http://esie.mx" target="_blank" style="color: <%dinsti.swtabc%>"> esie.mx</a>
+			</div>
+		</nav>
+		<!-- Footer -->               
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+i {
+  margin-right: 10px
+}
+
+h2 {
+  margin: 0
+}
+
+h6 {
+  margin: 0;
+  color: #777
+}
+
+ul {
+  padding-left: 0rem;
+}
+
+#accordian {
+  background: var(--color-principal);
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  float: left;
+  height: 95vh;
+  overflow-x: hidden;
+  position: relative
+}
+
+.main-navbar {
+  position: relative
+}
+
+#accordian li {
+  list-style-type: none
+}
+
+#accordian ul li span{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 45px;
+  display: block;
+  padding: 0 20px;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
+  position: relative
+}
+
+#accordian>ul>li.active>span{
+  color: var(--color-principal);
+  background-color: transparent;
+  transition: all .7s
+}
+
+#accordian span:not(:only-child):after {
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: .5s
+}
+
+#accordian .active>span:not(:only-child):after {
+  transform: rotate(90deg)
+}
+
+.selector-active {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 45px;
+  top: 0;
+  left: 0;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
+  background-color: var(--color-activo);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px
+}
+
+.selector-active .bottom,
+.selector-active .top {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-activo);
+  right: 0
+}
+
+.selector-active .top {
+  top: -25px
+}
+
+.selector-active .bottom {
+  bottom: -25px
+}
+
+.selector-active .bottom:before,
+.selector-active .top:before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-principal)
+}
+
+.selector-active .top:before {
+  left: -25px;
+  top: -25px
+}
+
+.selector-active .bottom:before {
+  bottom: -25px;
+  left: -25px
+}
+
+@media only screen and (max-device-width: 768px) {
+  #accordian ul li span {
+    font-size: 13px;
+    display: block;
+    padding: 0 2px;
+    transition-duration: .6s;
+    transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
+    position: relative;
+    text-align: center;
+  }
+  
+  #accordian li {
+    border-bottom-style: groove;
+  }
+
+  p  i {
+    font-size: 10px;
+  }
+}

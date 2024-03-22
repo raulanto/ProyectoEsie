@@ -1,0 +1,88 @@
+<HTML>
+
+<HEAD>
+  <title>ACTUALIZA FOLIO CENEVAL EN FICHA</title>
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+if (window!=window.top)
+   // top.location.href=location.href;
+// -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=620,height=200,left = 220,top = 309');");
+}
+// End -->
+</script>
+
+<script language=JavaScript>
+<!--
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<body>
+<H3><FONT COLOR="#0080C0"><CENTER>Datos Generales del Aspirante</CENTER></H3>
+<CENTER>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Clave CURP</TD>
+    <TD><%tcur%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre</TD>
+    <TD><%tnom%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Extensión</TD>
+    <TD><%text%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Modalidad</TD>
+    <TD><%tsis%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD>
+    <TD><%tcar%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Ficha</TD>
+    <TD><%tfic%></TD>
+  </TR>
+</TABLE>
+<P>PARA OBTENER EL (FOLIO CENEVAL) Y SU (PASE DE INGRESO AL EXAMEN) DEBERA TERMINAR EL REGISTRO EN: 
+<a href="http://registroenlinea.ceneval.edu.mx/RegistroLinea/indexCerrado.php">REGISTRO CENEVAL</a>
+</P>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">  
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+  <TR> 
+    <TD WIDTH=20% BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Folio CENEVAL</TD>
+    <TD WIDTH=80% ><input name="tcen" size="10" type="text" maxlength="10" VALUE="<%tcen%>"></TD>
+  </TR>
+</TABLE>
+<%cActDatos%>
+</form>
+<P>ES RESPONSABILIDAD DEL ASPIRANTE REALIZAR SU REGISTRO CENEVAL Y CAPTURAR CORRECTAMENTE SU FOLIO</P>
+
+</CENTER>
+
+</BODY>
+</HTML>

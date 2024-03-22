@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/brands.css">
+  	<link rel="stylesheet" href="/intertec/fontawesome/css/solid.css">	
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css">
+	<script src="/intertec/js/popper.min.js" ></script>
+	<script src="/intertec/js/bootstrap.min.js"></script>
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+	body{background-color: <%dinsti.swtapb%>}
+    .header-format {
+        background-color: <%dinsti.swtabb%>;
+        color: <%dinsti.swtabc%>;
+    }
+</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Servicio Social del periodo: <%trein%></h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">    
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="table-responsive">
+									<table class="table table-bordered table-sm">
+										<tr>
+											<td class="bg-light" colspan="2">No. Control</td><td colspan="1"><strong><%cusuario%></strong></td>
+											<td class="bg-light" colspan="1">Nombre</td><td colspan="3"><strong><%tnom%></strong></td>
+											<td class="bg-light" colspan="1">CURP</td><td colspan="2"><strong><%tcur%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Extensi&oacute;n</td><td colspan="2"><strong><%text%></strong></td>
+											<td class="bg-light" colspan="1">Modalidad</td><td colspan="2"><strong><%tsis%></strong></td>
+											<td class="bg-light" colspan="1">Carrera</td><td colspan="3"><strong><%tcar%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Plan</td><td colspan="3"><strong><%tpla%></strong></td>
+											<td class="bg-light" colspan="1">Especialidad</td><td colspan="5"><strong><%tesp%></strong></td>
+										</tr>	
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="1">Ingreso</td><td colspan="2"><strong><%ting%></strong></td>
+											<td class="bg-light" colspan="2"><%ctper%>s validados</td><td colspan="1"><strong><%tnpec%></strong></td>
+											<td class="bg-light" colspan="1">T&eacute;rmino</td><td colspan="1"><strong><%tter%></strong></td>
+											<td class="bg-light" colspan="1">Situaci&oacute;n</td><td colspan="1"><strong><%tsit%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Plan</td><td colspan="1"><strong><%tcret%></strong></td>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Aprobados</td><td colspan="1"><strong><%tcac%></strong></td>
+											<td class="bg-light" colspan="2">Porcentaje</td><td colspan="2"><strong><%tpctje%></strong></td>
+										</tr>
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="2">Mat.Totales</td><td colspan="2"><strong><%tmatt%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Cursadas</td><td colspan="1"><strong><%tmat%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Aprobadas</td><td colspan="2"><strong><%tmata%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="2">Prom.con Rep.</td><td colspan="1"><strong><%tpro%></strong></td>
+											<td class="bg-light" colspan="2">Prom.sin Rep.</td><td colspan="2"><strong><%tprosr%></strong></td>
+											<td class="bg-light" colspan="2"><%ctper%> Actual</td><td colspan="2"><strong><%tnpe%></strong></td>
+										</tr>
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="1">Periodo Actual</td><td colspan="3"><strong><%prcpdo%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Cursando</td><td colspan="1"><strong><%prcmat%></strong></td>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Cursando</td><td colspan="1"><strong><%prccre%></strong></td>
+										</tr>
+									</table>
+								</div>				  
+							</div>
+						</div>
+					</div>
+				</div>
+                <div style="text-align-last: center;">
+                    <form method="post" action="/cgi-bin/sie.pl" name="nuevaSolicitud">
+                        <div class="col-md-12 text-center">
+                            <input type="hidden" name="Opc" value="SSOCIALSOL">
+                            <button class="btn btn-success btn-lg" type="submit" name="aceptar">NUEVA SOLICITUD DE SERVICIO SOCIAL</button>
+						    <input type="hidden" id="Control" name="Control" value=<%cUsuario%>>
+						    <input type="hidden" id="Password" name="Password" value=<%cPassword%>>
+							<input type="hidden" id="psie" name="psie" value=<%cpsie%>>
+						    <input type="hidden" name="dummy" value=0>
+                        </div>
+                    </form>
+                </div><br>
+                <!--Start Formatos de solicitud-->
+                <div class="card shadow mb-4">
+					<div class="card-header header-format py-3">
+						<h5 class="m-0 font-weight-bold text-center">Formatos de solicitud</h5>
+					</div>
+					<div class="card-body">
+                        <div class="row">
+                            <div class="row row-cols-2 row-cols-lg-2" style="text-align-last: center;">
+                                <div class="col">Solicitud</div>
+                                <div class="col">Carta compromiso</div>
+                                <div class="col">Plan de trabajo</div>
+                                <div class="col">Constancia de avance acade&eacute;mico</div>
+                            </div>			  
+                        </div>
+					</div>
+				</div>
+                <!--End Formatos de solicitud-->
+                <!--Start Formatos de presentación y aceptación-->
+                <div class="card shadow mb-4">
+					<div class="card-header header-format py-3">
+						<h5 class="m-0 font-weight-bold text-center">Formatos de de presentaci&oacute;n y aceptaci&oacute;n</h5>
+					</div>
+					<div class="card-body">
+                        <div class="row">
+                            <div class="row row-cols-2 row-cols-lg-2" style="text-align-last: center;">
+                                <div class="col">Carta de presentaci&oacute;n</div>
+                                <div class="col">Carta de aceptaci&oacute;n</div>
+                            </div>			  
+                        </div>
+                    </div>
+				</div>
+                <!--End Formatos de presentación y aceptación-->
+                <!--Start Formatos de repotes bimestrales-->
+                <div class="card shadow mb-4">
+					<div class="card-header header-format py-3">
+						<h5 class="m-0 font-weight-bold text-center">Repotes bimestrales</h5>
+					</div>
+					<div class="card-body">
+                        <div class="row">
+                            <div class="row row-cols-2 row-cols-lg-3" style="text-align-last: center;">
+                                <div class="col">1er Formato de evaluaci&oacute;n</div>
+                                <div class="col">2do Formato de evaluaci&oacute;n</div>
+                                <div class="col">3er Formato de evaluaci&oacute;n</div>			  
+                            </div>
+                        </div>
+					</div>
+				</div>
+                <!--End Formatos de repotes bimestrales-->
+                <!--Start Formatos de reporte final, carta terminación y liberación-->
+                <div class="card shadow mb-4">
+					<div class="card-header header-format py-3">
+						<h5 class="m-0 font-weight-bold text-center">Reporte final, carta de terminaci&oacute;n y carta liberaci&oacute;n</h5>
+					</div>
+					<div class="card-body"> 
+                        <div class="row">
+                            <div class="row row-cols-2 row-cols-lg-3" style="text-align-last: center;">
+                                <div class="col">Reporte final</div>
+                                <div class="col">Carta de terminaci&oacute;n</div>
+                                <div class="col">Carta de liberaci&oacute;n</div>
+                            </div>			  
+                        </div>
+					</div>
+				</div>
+                <!--End Formatos de reporte final, carta terminación y liberación-->
+			</div>
+        </div>
+    </div>
+</body>
+</html>

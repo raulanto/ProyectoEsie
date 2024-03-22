@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/intertec/css/selectormateria.css" />
+    <link rel="stylesheet" href="/intertec/css/selectorcollapse.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/brands.css">
+  	<link rel="stylesheet" href="/intertec/fontawesome/css/solid.css">	
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css">
+	<script src="/intertec/js/popper.min.js" ></script>
+	<script src="/intertec/js/bootstrap.min.js"></script>
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<script src="/intertec/js/selectorreinscripcion.js"></script>
+	<script src="/intertec/js/selectorbajasyaltas.js"></script>
+	<script src="/intertec/js/selectorcollapse.js"></script>
+	<script> 
+		$(function(){
+			$("#INotRReinscr").load("/<%cpsie%>/notas/RReinscr.html");
+			$("#INotRReinscrGet").load("/<%cpsie%>/notas/RReinscrGet.html");
+			$("#INotRReinscrAlt").load("/<%cpsie%>/notas/RReinscrAlt.html");
+		});
+	</script>
+	<script languaje="javascript">
+		let maxMaterias = <%cmaxmat%>;
+		let maxCreditos = <%cmaxcre%>;
+		let minCreditos = <%cmincre%>;
+		let maxCruces   = "<%cmaxcru%>";
+		//<!---
+		//Disable right click script III- By Renigade (renigade@mediaone.net)
+		//For full source code, visit http://www.dynamicdrive.com
+		var message="";
+		///////////////////////////////////
+		function clickIE() {if (document.all) {(message);return false;}}
+		function clickNS(e) {if 
+		(document.layers||(document.getElementById&&!document.all)) {
+		if (e.which==2||e.which==3) {(message);return false;}}}
+		if (document.layers) 
+		{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+		else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+		document.oncontextmenu=new Function("return false")
+		// --> 
+	</script>	
+</head>
+<style>
+	body{background-color: <%dinsti.swtapb%>}
+	.accordion-button:not(.collapsed) {
+		background-color: #d39e0c;
+		color: white;
+	}
+	.accordion-button {
+		background-color: #d39e0c;
+		color: white;
+	}
+</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Reinscipci&oacute;n del periodo: <%trein%></h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">    
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="table-responsive">
+									<table class="table table-bordered table-sm">
+										<tr>
+											<td class="bg-light" colspan="2">No. Control</td><td colspan="1"><strong><%cusuario%></strong></td>
+											<td class="bg-light" colspan="1">Nombre</td><td colspan="3"><strong><%tnom%></strong></td>
+											<td class="bg-light" colspan="1">CURP</td><td colspan="2"><strong><%tcur%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Extensi&oacute;n</td><td colspan="2"><strong><%text%></strong></td>
+											<td class="bg-light" colspan="1">Modalidad</td><td colspan="2"><strong><%tsis%></strong></td>
+											<td class="bg-light" colspan="1">Carrera</td><td colspan="3"><strong><%tcar%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Plan</td><td colspan="3"><strong><%tpla%></strong></td>
+											<td class="bg-light" colspan="1">Especialidad</td><td colspan="5"><strong><%tesp%></strong></td>
+										</tr>	
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="1">Ingreso</td><td colspan="2"><strong><%ting%></strong></td>
+											<td class="bg-light" colspan="2"><%ctper%>s validados</td><td colspan="1"><strong><%tnpec%></strong></td>
+											<td class="bg-light" colspan="1">T&eacute;rmino</td><td colspan="1"><strong><%tter%></strong></td>
+											<td class="bg-light" colspan="1">Situaci&oacute;n</td><td colspan="1"><strong><%tsit%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Plan</td><td colspan="1"><strong><%tcret%></strong></td>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Aprobados</td><td colspan="1"><strong><%tcac%></strong></td>
+											<td class="bg-light" colspan="2">Porcentaje</td><td colspan="2"><strong><%tpctje%></strong></td>
+										</tr>
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="2">Mat.Totales</td><td colspan="2"><strong><%tmatt%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Cursadas</td><td colspan="1"><strong><%tmat%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Aprobadas</td><td colspan="2"><strong><%tmata%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="2">Prom.con Rep.</td><td colspan="1"><strong><%tpro%></strong></td>
+											<td class="bg-light" colspan="2">Prom.sin Rep.</td><td colspan="2"><strong><%tprosr%></strong></td>
+											<td class="bg-light" colspan="2"><%ctper%> Actual</td><td colspan="2"><strong><%tnpe%></strong></td>
+										</tr>
+										<tr><td class="bg-light" colspan="10"></td></tr>									
+										<tr>
+											<td class="bg-light" colspan="1">Periodo Actual</td><td colspan="3"><strong><%prcpdo%></strong></td>
+											<td class="bg-light" colspan="2">Mat.Cursando</td><td colspan="1"><strong><%prcmat%></strong></td>
+											<td class="bg-light" colspan="2">Cr&eacute;d.Cursando</td><td colspan="1"><strong><%prccre%></strong></td>
+										</tr>
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->
+						<!-- Notas-->
+						<div class="accordion" role="tablist">
+							<div class="accordion-item"">
+							  <h2 class="accordion-header" id="panelsStayOpen-heading1">
+								<button style="padding: 4px 0 4px 0; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse1" aria-expanded="false" aria-controls="panelsStayOpen-collapse1">
+								  <b>Requisitos de Reinscripci&oacute;n</b>
+								</button>
+							  </h2>
+							  <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading1">
+								<div id="INotRReinscr" class="accordion-body">
+								</div>
+							  </div>
+							</div>
+							<div class="accordion-item">
+							  <h2 class="accordion-header" id="panelsStayOpen-heading2">
+								<button style="padding: 4px 0 4px 0; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse2" aria-expanded="false" aria-controls="panelsStayOpen-collapse2">
+								  <b>Requisitos para seleccionar asignaturas y grupos</b>
+								</button>
+							  </h2>
+							  <div id="panelsStayOpen-collapse2" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading2">
+								<div id="INotRReinscrGet" class="accordion-body">
+								</div>
+							  </div>
+							</div>
+							<div class="accordion-item"">
+							  <h2 class="accordion-header" id="panelsStayOpen-heading3">
+								<button style="padding: 4px 0 4px 0; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false" aria-controls="panelsStayOpen-collapse3">
+								  <b>Video Tutorial</b>
+								</button>
+							  </h2>
+							  <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading3">
+								<div class="accordion-body">
+									<div class="ratio ratio-16x9">
+										<iframe src="https://player.vimeo.com/video/877259964?h=3fa7e13de5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Tutorial Reinscripciones SIE"></iframe>
+									</div>
+								</div>
+							  </div>
+							</div>
+						</div>
+						<br> KARDEX
+						<!-- Fin Notas-->				
+						<!-- start tabla 1 -->
+						<div class="row">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover">
+									<thead id="padre">
+										<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>; line-height:12px"> 
+											<%cStrrei%>
+										</tr>
+									</thead>
+									<tbody id="hijo">
+									    <tr> 
+											<%cStrDet%>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- fin tabla 1 -->     
+						<div class="form-group" style="text-align-last: center; font-size: 20px; font-weight: bold;">
+							<span><font style="color:red;"><%caviso%></font></span>
+						</div>					
+
+						<div class="form-group" style="text-align-last: center; font-size: 20px; font-weight: bold;">
+							<span>Fecha de Reinscripci&oacute;n asignada <font style="color:green;"><%cFechaIns%></font> Hora <font style="color:green;"><%cHoraIns%></font></span><span> Adeuda Especiales </span><span><font style="color:red;"><%cEsp%></font></span><span> Adeuda Repite </span><span><font style="color:red;"><%cRep%></font></span>
+						</div>					
+						<div class="form-group" style="text-align-last: center; font-size: 20px; font-weight: bold;">
+						    <span><%ctper%> <%cnperio%> + <%crnpt%> de Avance. M&aacute;ximo de Materias </span><span id="maxmat"><%cmaxmat%>.</span><span> M&aacute;ximo de Cr&eacute;ditos </span><span id="maxcre"><%cmaxcre%>.</span><span> M&iacute;nimo de Cr&eacute;ditos </span><span id="mincre"><%cmincre%>.</span> <span> M&aacute;ximo de Cruces </span><span><span id="maxcru"><%cmaxcru%></span> Hrs.</span>
+						</div>
+						<br>CARGA ACAD&EacuteMICA
+						<!-- start tabla 2-->
+						<form method="post" action="/cgi-bin/sie.pl" name="forma2" onsubmit="return enviar()">
+							<div class="row">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="materiasSeleccionadas">
+										<thead>
+											<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>; line-height:12px"> 
+												<th scope="col">&nbsp;</th>
+												<th scope="col">Clave</th>
+												<th scope="col">Materia</th>
+												<th scope="col">Cred</th>
+												<th scope="col">Tipo</th>												
+												<th scope="col">Grupo</th>
+												<th scope="col">Dis</th>
+												<th scope="col">Base</th>
+												<th scope="col">Plan</th>
+												<th scope="col">Paq</th>
+												<th scope="col">SPd</th>
+												<th scope="col">Lunes</th>
+												<th scope="col">Martes</th>
+												<th scope="col">Mi&eacute;rcoles</th>
+												<th scope="col">Jueves</th>
+												<th scope="col">Viernes</th>
+												<th scope="col">S&aacute;bado</th>
+												<th scope="col">Domingo</th>
+												<th scope="col">Docente</th>
+											</tr>
+										</thead>
+										<tbody>
+											<%cStrDetrei%>
+											<tr><td colspan="3">Total:</td><td id="creditosFinales"><%ctotcred%></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<br>
+							<tr>
+								<td>
+									<div class="form-group">
+										<label for="focom" style="background-color: silver" class="control-label col-auto d-flex justify-content-center align-items-center">COMENTARIO O SUGERENCIA</label>
+										<textarea class="form-control" name="ccom" id="focom" rows="3" <%chabilitado%>><%tcclcom%></textarea>
+									</div>
+								</td>
+							</tr>
+						    <input type="hidden" name="Opc" value="ESTREINSCRGUA">
+						    <input type="hidden" id="Control" name="Control" value=<%cUsuario%>>
+						    <input type="hidden" id="Password" name="Password" value=<%cPassword%>>
+							<input type="hidden" id="psie" name="psie" value=<%cpsie%>>
+						    <input type="hidden" name="dummy" value=0>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+								<button class="btn btn-secondary btn-lg" data-toggle="tooltip" data-placement="top" title="Guardar los cambios realizados" style="cursor:hand;" type="submit" name="Agregar" <%cHabilitado%>>GUARDAR</button>
+								<button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="top" title="Bloquear reinscripci&oacute;n" style="cursor:hand;" type="button" id="bloquear" <%cHabilitado%>>BLOQUEAR</button>
+							</div>
+						</form>
+						<!-- fin tabla 2-->
+						<!-- Start Form Block-->
+						<form method="post" action="/cgi-bin/sie.pl" name="formablock">
+						    <input type="hidden" name="Opc" value="ESTREINSCRBLO">
+						    <input type="hidden" id="Control" name="Control" value=<%cUsuario%>>
+						    <input type="hidden" id="Password" name="Password" value=<%cPassword%>>
+							<input type="hidden" id="psie" name="psie" value=<%cpsie%>>
+						    <input type="hidden" name="dummy" value=0>
+						</form>
+						<!-- End Form Block-->
+					<!-- start Altas y Bajas-->
+					<div class="accordion" role="tablist">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-heading4">
+								<button style="padding: 4px 0 4px 0; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
+									<b>Requisitos para solicitud de Altas y/o Bajas</b>
+								</button>
+							</h2>
+							<div id="panelsStayOpen-collapse4" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading4">
+								<div id="INotRReinscrAlt" class="accordion-body">
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item"">
+						  <h2 class="accordion-header" id="panelsStayOpen-heading5">
+							<button style="padding: 4px 0 4px 0; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false" aria-controls="panelsStayOpen-collapse5">
+							  <b>Video Tutorial</b>
+							</button>
+						  </h2>
+						  <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading5">
+							<div class="accordion-body">
+								<div class="ratio ratio-16x9">
+									<iframe src="https://player.vimeo.com/video/877269986?h=b70cc40319&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Tutorial Reinscripciones SIE"></iframe>
+								</div>
+							</div>
+						  </div>
+						</div>						
+					</div>
+					<br>SOLICITUDES DE ALTAS Y/O BAJAS
+						<form method="post" action="/cgi-bin/sie.pl" name="formaAltaBaja">
+							<div class="row">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="materiasAltasBajas">
+										<thead>
+											<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>; line-height:12px"> 
+												<th scope="col">&nbsp;</th>
+												<th scope="col">Clave</th>
+												<th scope="col">Materia</th>
+												<th scope="col">Cred</th>
+												<th scope="col">Tipo</th>												
+												<th scope="col">Grupo</th>
+												<th scope="col">Dis</th>
+												<th scope="col">Base</th>
+												<th scope="col">Plan</th>
+												<th scope="col">Paq</th>
+												<th scope="col">SPd</th>
+												<th scope="col">Lunes</th>
+												<th scope="col">Martes</th>
+												<th scope="col">Mi&eacute;rcoles</th>
+												<th scope="col">Jueves</th>
+												<th scope="col">Viernes</th>
+												<th scope="col">S&aacute;bado</th>
+												<th scope="col">Domingo</th>
+												<th scope="col">Docente</th>
+											</tr>
+										</thead>
+										<tbody>
+											<%cstrdetalt%>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						    <input type="hidden" name="Opc" value="ESTREINSCRALT">
+						    <input type="hidden" id="Control" name="Control" value=<%cUsuario%>>
+						    <input type="hidden" id="Password" name="Password" value=<%cPassword%>>
+							<input type="hidden" id="psie" name="psie" value=<%cpsie%>>
+						    <input type="hidden" name="dummy" value=0>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+								<button class="btn btn-warning btn-lg" data-toggle="tooltip" data-placement="top" title="Guardar" style="cursor:hand;" type="button" id="altbaj">GUARDAR</button>
+							</div>
+						</form>
+						<!-- fin tabla 2-->
+					</div>
+					<!-- fin cuerpo de la tarjeta-->
+					<div align="justify"> 
+						<input type="submit" name="Submit" value="Imprimir esta p&aacute;gina" onclick="javascript:window.print();">
+						<p>&nbsp;</p>
+						Antes de seleccionar su horario, le sugerimos leer las siguientes indicaciones.
+						<p>&nbsp;</p>						
+						El sistema realizara las siguientes validaciones:<br>
+						*Su siuaci&oacute;n sea Vigente.<br>
+						*El sistema determinar&aacute; la cantidad de materias que puede solicitar.<br>
+						*Selecciona las materias de su plan de estudios que no ha cursado.<br>
+						*Si el estudiante tiene m&oacute;dulo de especialidad capturado en el sistema, seleccionar&aacute; las materias que correspondan a este m&oacute;dulo.<br>
+						*Valida si la materia requiere % de cr&eacute;ditos de avance.<br>
+						*Omite la materia sino cumple con alg&uacute;n prerrequisito.<br>
+						*Indica con una E las materias que se cursar&oacute;n en curso especial, R las materias en repetici&oacute;n de curso y con una N en curso normal.
+						*Verifique la disponibilidad en grupos, ya que se pueden cerrar durante la captura, el sistema da prioridad al estudiante que guarde primero.
+						*Solo puede guardar si cumple con la carga m&iacute;nima de cr&eacute;ditos.
+						<p>&nbsp;</p>
+						Nota: Por lo anterior los grupos que no aparezcan en la lista es por que no cumplen con algunos de los requisitos anteriores.
+						Sus comentarios o sugerencias nos ayudarian a mejorar este servicio.
+						<p>&nbsp;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

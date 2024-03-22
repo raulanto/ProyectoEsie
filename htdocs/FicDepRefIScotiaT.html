@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Pago de Inscripcion</title>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small}
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: smaller}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">CURP</td>
+      <td width="80%"><%cUsuario%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Aspirante</td>
+      <td width="80%"><%cNombre%></td>
+    </tr>
+  </table>
+
+  <p></p>
+
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">DEPOSITAR EN</td>
+      <td width="80%"><%cBanco%></td>
+    </tr>
+    <tr> 
+      <td width="20%">CONVENIO</td>
+      <td width="80%"><%cCuenta%></td>
+    </tr>  
+  </table>
+
+  <p></p>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">Ficha</td>
+      <td width="80%"><%cPreFic%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Carrera</td>
+      <td width="80%"><%cCarrera%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Concepto</td>
+      <td width="80%"><%cConcepto1%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Fecha de Vencimiento</td>
+      <td width="80%"><%cFecLim%></td>
+    </tr>
+
+    <tr> 
+      <td width="20%">Importe</td>
+      <td width="80%"><%cImporte%></td>
+    </tr>
+  </table>
+  
+  <p></p>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">Referencia</td>
+      <td width="80%"><font face="arial" size=3><B><%cReferencia%></B></font></td>
+    </tr>
+    <tr> 
+      <td width="20%">ADVERTENCIA</td>
+      <td width="80%"><p align="justify">IMPRIMA esta ficha de datos. Se requiere esta referencia que consta de 46 alfanúmeros y que será validada por el banco. Las validaciones del pago por el plantel son al dia anterior, en caso de Reinscripón deberá realizar su depósito al menos un dia antes de la fecha de su Reinscripción para que el pago sea validado a tiempo. Pagos menores deberá recurrir diréctamente con el Departamento de Recursos Financieros del plantel</p></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script language=JavaScript>
+	<!--
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Horario</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body"> 
+						<CENTER>
+						<div class="alert alert-success" role="alert">
+							<%tevd%><BR>
+							PERIODO ESCOLAR <%tpdo%><BR>
+							NIVEL: <%tniv%><BR>
+							<%tproind%>
+						</div>	
+						</CENTER>						
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 table-responsive">
+									<table class="table table-bordered table-hover table-sm">
+										<tr>
+											<td class="bg-light" colspan="1">No. Control</td><td colspan="1"><strong><%cusuario%></strong></td>
+											<td class="bg-light" colspan="1">Nombre</td><td colspan="1"><strong><%tnom%></strong></td>
+											<td class="bg-light" colspan="1">CURP</td><td colspan="1"><strong><%tcur%></strong></td>											
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Clave</td><td colspan="1"><strong><%tmat%></strong></td>
+											<td class="bg-light" colspan="1">Materia</td><td colspan="1"><strong><%tmatnom%></strong></td>											
+											<td class="bg-light" colspan="1">Grupo</td><td colspan="1"><strong><%tgpo%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Clave</td><td colspan="1"><strong><%tper%></strong></td>
+											<td class="bg-light" colspan="1">Docente</td><td colspan="1"><strong><%tpernom%></strong></td>
+											<td class="bg-light" colspan="1">Preguntas</td><td colspan="1"><strong><%tevdpre%></strong></td>											
+										</tr>
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->						
+						<!-- start tabla 1 -->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="card">
+									<div class="card-body table-responsive">
+										<!-- start table-->
+										<table class="table table-bordered table-hover table-sm">
+											<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+												<div id="accordion" role="tablist">
+													<%cstrdet%>
+												</div>	
+												<tr>
+													<td>
+														<div class="form-group">
+															<label for="focom" style="background-color: silver" class="control-label col-auto d-flex justify-content-center align-items-center">COMENTARIO ADICIONAL</label>
+															<textarea class="form-control" name="pcom" id="focom" rows="3" <%tdis%>><%trescom%></textarea>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td align="center">
+														<%cBoton%>
+													</td>
+												</tr>												
+											</form>
+										</table>
+										<!-- fin table--> 
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- fin tabla 1 -->                  
+					</div>
+					<!-- fin cuerpo de la tarjeta-->
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- fin contenido -->
+    <script src="/intertec/js/event-handler.js"></script>
+    <script src="/intertec/js/selector-engine.js"></script>
+    <script src="/intertec/js/manipulator.js"></script>
+    <script src="/intertec/js/data.js"></script>
+    <script src="/intertec/js/base-component.js"></script>
+    <script src="/intertec/js/collapse.js"></script>
+	<script src="/intertec/js/bootstrap.bundle.min.js"></script>     
+
+ <script type="text/javascript">  
+ function ValidatePetSelection(prpre)  
+ {  
+    var checkboxes = document.getElementsByName(prpre);  
+    var numberOfCheckedItems = 0;  
+    for(var i = 0; i < checkboxes.length; i++)  
+    {  
+        if(checkboxes[i].checked)  
+            numberOfCheckedItems++;  
+    }  
+    if(numberOfCheckedItems > 1)  
+    {  
+        alert("solo puede seleccionar una opción!");  
+        return false;  
+    }  
+ }  
+ </script>
+	
+</body>
+</html>

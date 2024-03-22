@@ -1,0 +1,83 @@
+<html>
+
+<script language=JavaScript>
+<!--
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<head>
+  <meta http-equiv="Content-Type"
+  content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+  <title>Calificaciones</title>
+</head>
+
+<body bgcolor="#ffffff" bgproperties="fixed">
+<CENTER>
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Periodo</FONT></TD><TD><%tperio%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Materia</FONT></TD><TD><%tmateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Grupo</FONT></TD><TD><%cMateria%></TD></TR>
+  <%cTemarioG%>
+</TABLE>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+</CENTER>
+  <TABLE BORDER="1" WIDTH="100%" CELLSPACING=0 CELLPADDING=0>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fecha     </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fecha de  </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Asist.    </FONT></TD>
+    <TD width="50%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    </TR>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Registros </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Limite    </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Plazo     </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Totales   </FONT></TD>
+    <TD width="50%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fórmula   </FONT></TD>
+    </TR>
+    <%cTemCap%>
+</FORM>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma2">
+  <%cBotonReg%>
+</form>
+
+  <table width="100%" border="1">
+    <tr>
+      <td width="30%"><span style="cursor:hand; text-decoration:underline; color:#0000FF" onClick="javascript:window.location='/cgi-bin/sie.pl?Opc=IMLISTA&amp;Control=<%cUsuario%>&amp;Password=<%cPassword%>&amp;Formato=1&amp;dummy=0'">Imprime Lista de Apuntes</span></td>
+      <td width="30%"><span style="cursor:hand; text-decoration:underline; color:#0000FF" onClick="javascript:window.location='/cgi-bin/sie.pl?Opc=IMLISTA&amp;Control=<%cUsuario%>&amp;Password=<%cPassword%>&amp;Formato=2&amp;dummy=0'">Imprime Lista de Parciales</span></td>
+      <td width="40%"><span style="cursor:hand; text-decoration:underline; color:#0000FF" onClick="javascript:window.location='/cgi-bin/sie.pl?Opc=IMLISTA&amp;Control=<%cUsuario%>&amp;Password=<%cPassword%>&amp;Formato=3&amp;dummy=0'">Imprime Lista de Final</span></td>
+    </tr>
+  </table>
+
+<font size="1">
+<P><BR>&nbsp;</P>
+<ADDRESS><FONT size=3>- Podrá registrar asistencias y calificaciones, sólo en 
+las unidades que tengan las fechas reales capturadas en la planeación del curso 
+y sólo si no ha entregado el reporte parcial que abarque estas 
+unidades.</FONT></ADDRESS>
+<ADDRESS><FONT size=3>- Los link en la columna&nbsp;(TEMAS) le permiten accesar 
+a la lista de alumnos para el registro de calificaciones y faltas de cada 
+unidad.</FONT></ADDRESS>
+<ADDRESS><FONT size=3>- Debe de registrar asistencias totales (número de 
+clases)&nbsp;para cada unidad si desea registrar faltas y&nbsp;estas no pueden 
+ser mayor a las asistencias.</FONT></ADDRESS> </font> 
+</body>
+</html>

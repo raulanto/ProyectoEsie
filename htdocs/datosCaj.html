@@ -1,0 +1,92 @@
+<HTML>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY>
+<H1><FONT COLOR="#0080c0"><CENTER>Datos Generales del Cajero</CENTER></H1>
+<CENTER>
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Nombre</FONT></TD>
+    <TD> 
+      <%tnom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">RFC</FONT></TD>
+    <TD> 
+      <%trfc%>
+    </TD>
+  </TR>
+
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">CURP</FONT> </TD>
+    <TD> 
+      <%tcur%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Calle</FONT></TD>
+    <TD> 
+      <%tcll%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Num</FONT></TD>
+    <TD> 
+      <%tnum%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Colonia</FONT></TD>
+    <TD> 
+      <%tcol%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Ciudad</FONT></TD>
+    <TD> 
+      <%tciu%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">C.P.</FONT></TD>
+    <TD> 
+      <%tcpo%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Teléfono</FONT></TD>
+    <TD> 
+      <%ttel%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Correo Electrónico</FONT> </TD>
+    <TD>
+      <%tmai%>
+    </TD>
+  </TR>
+</TABLE>
+<%cActDatos%>
+</FORM>
+<CENTER></CENTER></CENTER></FONT>
+</BODY></HTML>

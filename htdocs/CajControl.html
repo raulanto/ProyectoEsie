@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<TITLE>Control Escolar</TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice/5.1 (Linux)">
+	<META NAME="CREATED" CONTENT="19991203;8463500">
+	<META NAME="CHANGEDBY" CONTENT="Genaro Mendez L gmendez">
+	<META NAME="CHANGED" CONTENT="19991203;8591400">
+	<STYLE>
+	<!--
+		H2 { color: #510000 }
+		TD P { color: #510000 }
+		P { color: #510000 }
+		A:visited { color: #cc9966 }
+		A:link { color: #999900 }
+	-->
+	</STYLE>
+</HEAD>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY TEXT="#510000" LINK="#999900" VLINK="#cc9966" BGCOLOR="#ffffff" >
+<H2 ALIGN=CENTER><FONT COLOR="#b84747"><SPAN STYLE="background: transparent">Sistema
+de Integraci&oacute;n Escolar</SPAN></FONT></H2>
+<CENTER>
+<BR>
+<BR>
+<BR>
+<FORM ACTION="/cgi-bin/sie.pl" METHOD="POST">
+	<INPUT TYPE=HIDDEN NAME="Control" VALUE="<%cUsuario%>">
+	<INPUT TYPE=HIDDEN NAME="Password" VALUE="<%cPassword%>">
+	<INPUT TYPE=HIDDEN NAME="Opc" VALUE="CajPServ">
+
+
+	<TABLE WIDTH=297 BORDER=1 CELLPADDING=5 CELLSPACING=0>
+		<COL WIDTH=129>
+		<COL WIDTH=146>
+		<TR>
+		   <TD COLSPAN=2 WIDTH=285>
+		       <P ALIGN=CENTER STYLE="margin-left: 0.07in"><FONT COLOR="#999900"><B>Introduzca su nuevo NIP</B></FONT></P>
+		   </TD>
+		</TR>
+		<TR>
+		   <TD WIDTH=129>
+		      <P>Nueva clave de Acceso&nbsp;</P>
+		   </TD>
+		   <TD WIDTH=146>
+		       <P STYLE="margin-left: 0.16in"><INPUT TYPE="text" NAME="Newpass" SIZE=9 MAXLENGTH=9></P>
+		   </TD>
+		</TR>
+	</TABLE>
+	<CENTER>
+	
+  <P ALIGN=CENTER>Escriba elcontrol a mostrar de 9 caracteres</P>
+  <P ALIGN=CENTER><BR><BR></P>
+  <P ALIGN=CENTER><INPUT TYPE=SUBMIT NAME="aceptar" VALUE="Aceptar"></P>
+</FORM>
+</BODY>
+</HTML>

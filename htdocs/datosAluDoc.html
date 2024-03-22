@@ -1,0 +1,162 @@
+<HTML>
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+if (window!=window.top)
+   // top.location.href=location.href;
+// -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=620,height=200,left = 220,top = 309');");
+}
+// End -->
+</script>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+</HEAD>
+
+<body>
+
+<H1><FONT COLOR="#0080C0"><CENTER>Datos Generales del Alumno</CENTER></H1>
+<img src="/f<%cpsie%>/<%tfot%>" border=0>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre del Alumno</TD>
+    <TD><%tnom%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD>
+    <TD><%tcar%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Plan de Esutios</TD>
+    <TD><%tpla%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">M&oacute;dulo de Especialidad</TD>
+    <TD><%tesp%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Cr&eacute;ditos Acumulados</TD>
+    <TD><%tcac%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Situaci&oacute;n de Vigencia</TD>
+    <TD><%tsit%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Periodo de Ingreso</TD>
+    <TD><%ting%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">N&uacute;mero de Periodos Convalidados</TD>
+    <TD><%tnpec%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Periodo Actual o Ultimo</TD>
+    <TD><%tnpe%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Clave CURP</TD>
+    <TD><%tcur%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Fecha de Nacimiento</TD>
+    <TD><%tnac%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Escuela de Procedencia</TD>
+    <TD><%tesc%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Teléfonos</TD>
+    <TD><%tte1%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Correo Electrónico</TD>
+    <TD><%tmai%></TD>
+  </TR>
+</TABLE>
+<H2><FONT COLOR="#0080C0"><CENTER>Horario del Semestre</CENTER></H2>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=5>
+<TR><TD BGCOLOR="#0080C0">Cve<TD bgcolor="#0080C0">Materia<TD bgcolor="#0080C0">Rep<TD bgcolor="#0080C0">Lun<TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Mar<TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Mie<TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Jue<TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Vie<TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Sab<TD bgcolor="#0080C0">
+<TR><TD bgcolor="#0080C0"><TD bgcolor="#0080C0"><TD bgcolor="#0080C0"><TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul<TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul<TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul<TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul<TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul<TD bgcolor="#0080C0">Hora<TD bgcolor="#0080C0">Aul</td>
+<%cStrCont%>
+</table>
+<H2><FONT COLOR="#0080C0"><CENTER>Calificaciones del Semestre</CENTER></H2>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=5>
+	<TR BGCOLOR="#0080C0">
+		<TD><FONT COLOR=#FFFFFF>Clave</TD>
+		<TD></TD>
+		<TD><FONT COLOR=#FFFFFF>Nombre</TD>
+		<TD><FONT COLOR=#FFFFFF>Calif</TD>
+		<TD><FONT COLOR=#FFFFFF>Op</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa1</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa2</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa3</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa4</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa5</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa6</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa7</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa8</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa9</TD>
+		<TD><FONT COLOR=#FFFFFF>Pa10</TD>
+		<%cStrCont2%>
+        </TR>
+</TABLE>
+
+<H2><FONT COLOR="#0080C0"><CENTER>Kardex del Alumno</CENTER></H2>
+<TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=5>	
+      <TR BGCOLOR="#0080C0">
+      		<TD>
+      		<TD>
+      		<TD>
+      		<TD>
+      		<TD><FONT COLOR=#FFFFFF>1a.
+      		<TD>
+      		<TD><FONT COLOR=#FFFFFF>2da.
+      		<TD>
+      		<TD><FONT COLOR=#FFFFFF>Especial
+      </TR>
+      <TR BGCOLOR="#0080C0">
+     	      <TD><FONT COLOR=#FFFFFF>Clave
+	      <TD><FONT COLOR=#FFFFFF>Materia
+	      <TD><FONT COLOR=#FFFFFF>Cal.
+	      <TD><FONT COLOR=#FFFFFF>Op.
+	      <TD><FONT COLOR=#FFFFFF>Sem.
+	      <TD><FONT COLOR=#FFFFFF>Per.
+	      <TD><FONT COLOR=#FFFFFF>Sem.
+	      <TD><FONT COLOR=#FFFFFF>Per.
+	      <%cStrCont3%>
+      </TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

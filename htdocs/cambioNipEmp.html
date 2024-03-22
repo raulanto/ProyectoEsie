@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Empresa</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Cambio de Clave de Acceso</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">    
+						<FORM ACTION="/cgi-bin/sie.pl" METHOD="POST">
+						<!-- datos del área -->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">.</h6>
+									</div>
+									<div class="card-body">	
+										<div class="row">
+											<div class="col-md-4">
+												<label for="inputAbre" class="fw-bold">Nueva Clave de Acceso</label>
+												<input name="Newpass" class="form-control" size="10" type="password" maxlength="10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos personales -->														
+							<!-- boton modificar datos -->								
+							<div class="container-fluid h-100"> 
+								<div class="row w-100 align-items-center">
+									<div class="col text-center">
+										<br>
+										<INPUT TYPE=HIDDEN NAME="Control" VALUE="<%cUsuario%>">
+										<INPUT TYPE=HIDDEN NAME="Password" VALUE="<%cPassword%>">
+										<INPUT TYPE=HIDDEN NAME="psie" value="<%cpsie%>">
+										<INPUT TYPE=HIDDEN NAME="Opc" VALUE="CAMBIARNIPEMP">
+										<P ALIGN=CENTER>Escriba su nueva clave de acceso, máximo de 10 y mínimo de 8 caracteres, iniciando con una letra</P>
+										<P ALIGN=CENTER>Al Aceptar, ingrese desde la página de acceso nuevamente con su nueva clave</P>
+										<P ALIGN=CENTER>
+										<BR>
+										<BR>
+										<P ALIGN=CENTER>
+										<INPUT TYPE=SUBMIT NAME="aceptar" VALUE="Aceptar"></P>
+									</div>	
+								</div>    
+							</div>
+							<!-- Termina Boton -->
+						</FORM>
+						<!-- fin tabla 2-->
+					</div>
+					<!-- fin cuerpo de la tarjeta-->
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

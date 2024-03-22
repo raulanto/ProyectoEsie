@@ -1,0 +1,179 @@
+<HTML>
+<HTML>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY>
+<H2><FONT COLOR="#0080C0"><CENTER>Datos Académicos del Alumno</CENTER></H1>
+<CENTER>
+<img src="/f<%cpsie%>/<%tfot%>" WIDTH=100 border=0>
+<TABLE BORDER=1 WIDTH="100%" CELLPADDING=0 CELLSPACING=0>
+  <TR><TD WIDTH="25%" BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">No.Control</TD><TD WIDTH="75%"><%cusuario%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre del Alumno</TD><TD><%tnom%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD><TD><%tcar%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Plan de Esutios</TD><TD><%tpla%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">M&oacute;dulo de Especialidad</TD><TD><%tesp%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Cr&eacute;ditos Acumulados</TD><TD><%tcac%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Situaci&oacute;n de Vigencia</TD><TD><%tsit%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Periodo de Ingreso</TD><TD><%ting%></TD></TR>
+  <TR><TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">N&uacute;mero de Periodos Convalidados</TD><TD><%tnpec%></TD></TR>
+  <TR><TD height="34" BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Periodo Actual o Ultimo</TD><TD><%tnpe%></TD></TR>  
+</TABLE>
+  
+  
+<h2 align="center">Datos Generales</h2>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Fecha de Nacimiento</TD><TD><%tnac%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Clave CURP</TD><TD><input name="tcur" type="text" maxlength="18" VALUE=<%tcur%>></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado de Nacimiento</TD><TD><%tesc%></TD>
+  </TR>    
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Escuela de Procedencia</TD><TD><%tesc%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado Civil</TD><TD><%tesc%></TD>
+  </TR>  
+</TABLE>
+
+<h2 align="center">Domicilio Actual</h2>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Calle</TD>
+    <TD><form name="form2" method="post" action="">
+      <input name="tcll" type="text" id="tcll" maxlength="30">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Num</TD>
+    <TD><form name="form3" method="post" action="">
+      <input name="tnum" type="text" id="tnum" maxlength="10">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Colonia</TD>
+    <TD><form name="form4" method="post" action="">
+      <input name="tcol" type="text" id="tcol" maxlength="30">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Ciudad</TD>
+    <TD><form name="form5" method="post" action="">
+      <input name="tciu" type="text" id="tciu" maxlength="30">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">C.P.</TD>
+    <TD><form name="form6" method="post" action="">
+      <input name="tcpo" type="text" id="tcpo" maxlength="5">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Tel&eacute;fono Domicilio</TD>
+    <TD><form name="form7" method="post" action="">
+      <input name="tte1" type="text" id="tte1" maxlength="12">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Tel&eacute;fono Celular</TD>
+    <TD><form name="form8" method="post" action="">
+      <input name="tte2" type="text" id="tte2" maxlength="12">
+    </form>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Correo Electr&oacute;nico</TD>
+    <TD><form name="form9" method="post" action="">
+      <input name="tmai" type="text" id="tmai" maxlength="40">
+    </form>
+    </TD>
+  </TR> 
+</TABLE>
+
+<h2 align="center">Ocupación</h2>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Estudio</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Trabajo</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Integracion Laboral</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">% en Area de Formación</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Trabaja en Otra Area</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Sector</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Nombre de la Empresa</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Domicilio: Calle</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Número</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Colonia</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Ciudad</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Municipio</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Teléfono 01</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Teléfono 02</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Puesto</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Antiguedad en el puesto</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Antiguedad en la empresa</TD><TD><%tmai%></TD>
+  </TR> 
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Ingreso Mensual</TD><TD><%tmai%></TD>
+  </TR>   
+</TABLE>
+
+<CENTER>
+</BODY></HTML>

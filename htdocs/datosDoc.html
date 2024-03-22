@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Docentes</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+    <script src="/intertec/js/funcion.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Datos Generales del Docente</h5>
+					</div>				
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">
+						<!--start container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 table-responsive">
+									<table class="table table-sm table-bordered">
+										<tr>
+											<td align="center">
+												<div id="foto">									  
+													<img src="<%miurl%>.jpg" width="100" height="100" border="0">
+												</div>
+											</td>
+											
+											<td align="center"> 
+												<div class="container">
+													<div class="row">
+														<div class="col-lg-10">
+															<%cSubir%>
+														</div>
+													</div>
+												</div> <!-- /container -->  
+											</td>										  
+										</tr>
+										<tr>
+											<td>Nombre</td><td><strong><%tnom%></strong></td>
+										</tr>
+										<tr>
+											<td>Curp</td><td><strong><%tcur%></strong></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- container -->
+						<!-- Segunda sección-->					  
+						<div class="row">
+							<!-- datos personales -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos personales</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Calle</label>
+												<p class="card-text"><%tcll%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">No</label>
+												<p class="card-text"><%tnum%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Colonia</label>
+												<p class="card-text"><%tcol%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Ciudad</label>
+												<p class="card-text"><%tciu%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Cp</label>
+												<p class="card-text"><%tcpo%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Tel&eacutefonos</label>
+												<p class="card-text"><%tte1%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Correo E. Personal</label>
+												<p class="card-text"><%tmai%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Correo E. Institucional</label>
+												<p class="card-text"><%tmaii%></p>
+											</div>								
+										</div>								 
+									</div>
+								</div>
+							</div>							
+							<!-- fin datos personales -->
+							<!-- datos laborales -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos Laborales</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<label for="inputAbre" class="fw-bold">T&iacutetulo</label>
+												<p class="card-text"><%ttit%></p>
+											</div>									
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Plazas</label>
+												<p class="card-text"><%tpla%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Puesto</label>
+												<p class="card-text"><%tpue%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Ingreso</label>
+												<p class="card-text"><%ting%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Departamento</label>
+												<p class="card-text"><%tdep%></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos laborales-->					  							
+						</div>
+						<!-- Fin segunda sección-->					  						
+						<!-- boton modificar datos
+						<div class="row py-4 justify-content-center">
+							<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+								<div class="col-md-6">
+									<%cBoton%>
+								</div>
+							</form>
+						</div>
+						-->
+					</div>
+					<!-- termina cuerpo de la tarjeta-->
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

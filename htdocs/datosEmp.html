@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Empresas</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+    <script src="/intertec/js/funcion.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Datos de la Empresa</h5>
+					</div>
+					<!-- tarjeta-->
+					<div class="card-body">    
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-14 table-responsive">
+									<table class="table table-hover table-bordered table-sm">
+										<tr>
+											<td class="bg-light">Empresa</td><td colspan="2"><strong><%SUBS(cusuario,1,6)%></strong></td>
+											<td class="bg-light">Nombre</td><td colspan="5"><strong><%tnom%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">RFC</td><td colspan="2"><strong><%trfc%></strong></td>
+											<td class="bg-light">Giro</td><td colspan="3"><strong><%tgir%></strong></td>
+											<td class="bg-light">Sector</td><td colspan="1"><strong><%tsec%></strong></td>
+										</tr>								
+										<tr>
+											<td class="bg-light">Misión</td><td colspan="8"><textarea class='form-control form-control-sm' name='pmis' cols='30' rows='3' readonly><%tmis%></textarea></TD>
+										</tr>
+										<tr>
+											<td class="bg-light">Desactivada</td><td colspan="2"><strong><%tdes%></strong></td>
+											<td class="bg-light">Acepta Servicio Social</td><td colspan="2"><strong><%tsso%></strong></td>
+											<td class="bg-light" colspan="2">Acepta Residencia/Práctica/Estadía</td><td colspan="1"><strong><%tres%></strong></td>
+										</tr>								
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->						
+						<!-- Segunda sección -->
+						<div class="row">
+							<!-- datos del área -->
+							<div class="col-sm-12">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos Del Área</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Nombre</label>
+												<p class="card-text"><%tnom%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Representante</label>
+												<p class="card-text"><%trep%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Puesto</label>
+												<p class="card-text"><%tpto%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Firma el Acuerdo</label>
+												<p class="card-text"><%tacu%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Puesto</label>
+												<p class="card-text"><%tacupto%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Calle y Número</label>
+												<p class="card-text"><%tcnu%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Colonia</label>
+												<p class="card-text"><%tcol%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Ciudad</label>
+												<p class="card-text"><%tciu%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Cp</label>
+												<p class="card-text"><%tcpo%></p>
+											</div>
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Teléfonos</label>
+												<p class="card-text"><%ttel1%> - <%ttel2%></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label for="inputAbre" class="fw-bold">Correo E. Personal</label>
+												<p class="card-text"><%tmai%></p>
+											</div>
+										</div>                             
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos personales -->
+						</div>
+						<!-- Fin Segunda sección -->						
+						<!-- botón modificar datos -->
+						<div class="row">
+							<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+								<div class="col-md-12 text-center">
+									<br>
+									<%cBoton%>
+								</div>
+							</form>
+						</div>
+						<!-- Fin botón modificar datos -->
+					</div>
+					<!-- termina cuerpo de la tarjeta-->
+				</div>
+            </div>
+        </div>
+    </div>
+<!--
+<%cMensaje%>
+-->
+</body>
+</html>

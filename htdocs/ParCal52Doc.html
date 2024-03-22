@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Docentes</title>
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+    function copiarCalificaciones() {
+        Swal.fire({
+            title: '&iquest;Desea pegar desde el portapapeles?',
+			icon: 'question',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Pegar',
+            denyButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigator.clipboard.readText()
+                    .then(text => {
+                        var texto = text;
+                        var calificaciones = texto.split("\r\n");
+                        calificaciones.forEach((line, index) => {
+                            var calificacion = line.split("\t");
+                            calificacion.forEach((cal, col) => {
+                                if (cal != undefined && cal != '') {
+                                    var campo = "cr" + (index + 1 < 10 ? "0" : "") + (index + 1) + (col < 10 ? "0" : "") + col;
+                                    var elem = document.getElementById(campo);
+									elem.value = cal;
+									elem.style.background="#ffffdd";
+                                }
+                            })
+                        })
+                    })
+                    .catch(err => {
+                        console.log('Error ', err);
+                    })
+            } else if (result.isDenied) {
+                Swal.fire('Datos no pegados', '', 'info')
+            }
+        })
+    }	
+	</script>	
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+  <!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5 class="text-white">Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+         <div class="col-lg-12 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h5 class="m-0 font-weight-bold text-secondary text-center">Seguimiento del Curso</h5>
+                </div>
+                <!-- cuerpo de la tarjeta-->
+                <div class="card-body">              
+                    <!--start cuadro de datos superior -->
+                    <div class="container">
+                      <div class="row">
+                          <div class="col-sm-14 table-responsive">
+                              <table class="table table-hover table-bordered table-sm">
+                                    <tr>
+                                      <td class="bg-light">Per&iacute;odo</td><td><strong><%tperiodo%></strong></td>
+                                      <td class="bg-light">Nombre</td><td colspan="3"><strong><%tnom%></strong></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="bg-light">Materia</td><td><strong><%tmatnom%></strong></td>
+                                      <td class="bg-light">Grupo</td><td><strong><%tgrupo%></strong></td>
+                                      <td class="bg-light">Plan</td><td><strong><%tcarnom%></strong></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="bg-light">Tema/Competencia</td><td><strong><%cUnidad%></strong></td>
+                                      <td colspan="4"><strong><%tCompe%></strong></td>
+                                    </tr>
+                              </table>
+                          </div>
+                      </div>
+                    </div>					
+                    <!--fin cuadro de datos superior -->
+					<ADDRESS><FONT size=2>R=Repite Curso(RE=Repite ES=Especial)</FONT></ADDRESS>
+                    <!-- start tabla 1 -->
+					<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+						<div class="row py-1">
+							<div class="col-sm-12">
+							  <div class="card">
+								<div class="card-body table-responsive">
+								  <!-- start table-->
+								  <table class="table table-striped table-hover table-bordered">
+									<thead>
+										<tr>
+											<td colspan="2"><%cBotReg%></td>
+											<td colspan="1"></td>
+											<td colspan="4"><div class="btn btn-warning btn-block" onclick="copiarCalificaciones()">Pegar desde el Portapapeles Faltas y Calificaciones</div></td>
+										</tr>
+										<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+											<%cEncab%>									
+										</tr>
+									</thead>
+									<tbody>
+										<%cRelac%>
+										<tr><td colspan=7><%cBoton%></td></tr>	
+									</tbody>
+								</table>
+								<!-- fin table-->
+							   </div>
+							  </div>
+							</div>
+						</div>
+					</form>					
+                    <!-- fin tabla 1 -->
+                </div>
+                <!-- fin cuerpo de la tarjeta-->
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

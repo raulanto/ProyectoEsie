@@ -1,0 +1,13 @@
+.accordion-item {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.tdLeft {
+    text-align: end;
+    padding-right: 10px;
+}
+
+.tdCenter {
+    text-align: center;
+}

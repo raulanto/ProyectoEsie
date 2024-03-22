@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Seguimiento del Curso</title>
+	<script language=JavaScript>
+	<!--
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+
+<body bgcolor="#ffffff" bgproperties="fixed">
+<center>
+<table border='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Periodo</FONT></TD><TD><%tperio%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Plan</FONT></TD><TD><%tplan%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Materia</FONT></TD><TD><%tmateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Grupo</FONT></TD><TD><%cMateria%></TD></TR>
+  <%cTemarioG%>
+</table>
+</center>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <table border="1" WIDTH="100%" CELLSPACING=0 CELLPADDING=0>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Evaluación</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Asist.    </FONT></TD>
+    <TD width="50%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    </TR>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Temas     </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Programada</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Real      </FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Totales   </FONT></TD>
+    <TD width="50%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fórmula   </FONT></TD>
+    </TR>
+  <%cTemCap%>
+  
+  <table width="100%" border="1">
+    <tr>
+      <%cBoton%>
+      <%cCMDocen%>
+    </tr>    
+  </table>
+
+</form>
+
+<font size="1">
+<P><BR>&nbsp;</P>
+<ADDRESS><FONT size=3>- Podrá registrar asistencias y calificaciones, sólo en 
+las unidades que tengan las fechas reales capturadas en la planeación del curso 
+y sólo si no ha entregado el reporte parcial que abarque estas 
+unidades.</FONT></ADDRESS>
+<ADDRESS><FONT size=3>- Los link en la columna&nbsp;(TEMAS) le permiten accesar 
+a la lista de alumnos para el registro de calificaciones y faltas de cada 
+unidad.</FONT></ADDRESS>
+<ADDRESS><FONT size=3>- Debe de registrar asistencias totales (número de 
+clases)&nbsp;para cada unidad si desea registrar faltas y&nbsp;estas no pueden 
+ser mayor a las asistencias.</FONT></ADDRESS> </font> 
+</body>
+</html>

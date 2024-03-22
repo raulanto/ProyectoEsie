@@ -1,0 +1,110 @@
+<HTML>
+<HTML>
+
+<BODY>
+<H1><FONT COLOR="#0080C0"><CENTER>
+  Datos Académicos del Aspirante
+</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre del Aspirante</TD>
+    <TD> 
+      <%tnom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD>
+    <TD> 
+      <%tcar%>
+    </TD>
+  </TR>
+</TABLE>
+
+<h2 align="center">Datos del Servicio</h2>
+
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Folio</TD>
+    <TD> 
+      <%tfol%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Código</TD>
+    <TD> 
+      <%tcod%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Descripción</TD>
+    <TD> 
+      <%tdes%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Importe</TD>
+    <TD> 
+      <%timp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Vigencia</TD>
+    <TD> 
+      <%tvig%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Solicitado</TD>
+    <TD> 
+      <%tfec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Validado</TD>
+    <TD> 
+      <%tval%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Trámite</TD>
+    <TD> 
+      <%ttra%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Listo</TD>
+    <TD> 
+      <%tlis%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Entregado</TD>
+    <TD> 
+      <%tent%>
+    </TD>
+  </TR>
+</TABLE>
+  
+<form method="post" onSubmit="return validar()" action="/cgi-bin/sie.pl" name="forma1">  
+<h3 align="center">Datos del Banco</h3>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Receptor del Pago</TD>
+<!--    <TD><input name="tsub" size="10" type="text" maxlength="10" VALUE=<%tsub%>></TD> --> 
+    <TD><%cSub%></TD>    
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Linea de Captura</TD>
+    <TD><input name="taub" size="20" type="text" maxlength="20" VALUE=<%taub%>>20 números</TD>
+  </TR>
+</TABLE>
+<%cActDatos%>
+</form>
+<BR>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+<%cSubirPago%>  
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+.elegible {
+    background-image: url(/intertec/img/logosiet.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-left: 90%;
+    margin-top: 2%;
+}
+
+.sieIcono {
+    background-image: url(/intertec/img/logosiet.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+.seleccionado::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f772";
+    color: green;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 90%;
+}
+.seleccionado {
+    margin-top: 5%;
+}
+
+.materiaSelect {
+    padding: 0 0 0 0;
+}
+
+.materiaAgregar::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f0fe";
+    color: green;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.elegalta::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f164";
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 90%;
+}
+
+.elegalta {
+    margin-top: 5%;
+}
+
+.selecalta::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f772";
+    color: green;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 90%;
+}
+
+.selecalta {
+    margin-top: 5%;
+}
+
+.altaAgregar::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f0fe";
+    color: green;
+    font-size: 20px;
+    font-weight: 900;
+}

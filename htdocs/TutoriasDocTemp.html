@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Docentes</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+  <!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci�n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+
+        <div class="row py-1">
+         <div class="col-lg-12 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h5 class="m-0 font-weight-bold text-secondary text-center">Horario</h5>
+                </div>
+                <!-- cuerpo de la tarjeta-->
+                <div class="card-body">              
+                    <!--start cuadro de datos superior -->
+                    <div class="container">
+                      <div class="row">
+                          <div class="col-sm-14 table-responsive">
+                              <table class="table table-hover table-bordered table-sm">
+                                    <tr>
+                                      <td class="bg-light">Per�odo</td><td><strong><%tperio%></strong></td>
+                                      <td class="bg-light">Departamento</td><td><strong><%tdep%></strong></td>
+                                      <td class="bg-light">Puesto</td><td><strong><%tpue%></strong></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="bg-light">Nombre</td><td><strong><%tnom%></strong></td>
+                                      <td class="bg-light">Plazas</td><td colspan="3"><strong><%tpla%></strong></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="bg-light">T�tulo</td><td colspan="5" ><strong><%ttit%></strong></td>
+                                    </tr>
+                              </table>
+                          </div>
+                      </div>
+                    </div>
+                    <!--fin cuadro de datos superior -->
+                    <!-- start tabla 1 -->
+                    <div class="row py-1">
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-body table-responsive">
+									<!-- start table-->
+									<table class="table table-striped table-hover table-bordered">
+										<thead>
+											<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+												<th scope="col">Plan</th>
+												<th scope="col">GRUPO</th>
+												<th scope="col">MATERIA</th>
+												<th scope="col">Cr�</th>
+												<th scope="col">Sem</th>
+												<th scope="col">Lunes</th>
+												<th scope="col">Martes</th>
+												<th scope="col">Mi�rcoles</th>
+												<th scope="col">Jueves</th>
+												<th scope="col">Viernes</th>
+												<th scope="col">S�bado</th>
+												<th scope="col">Domingo</th>
+												<th scope="col">Horas</th>
+											</tr>
+										</thead>
+										<tbody>
+											<%cStrGrupos%>
+										</tbody>
+									</table>
+									<!-- fin table-->
+								</div>
+							</div>
+                        </div>
+                    </div>
+                      <!-- fin tabla 1 -->                  
+                      <!-- start tabla 2-->
+                      <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body table-responsive">
+                              <!-- start table-->
+                              <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+                                    <th scope="col">Clave</th>
+                                    <th scope="col">Actividad</th>
+                                    <th scope="col">Lugar</th>
+                                    <th scope="col">Lunes</th>
+                                    <th scope="col">Martes</th>
+                                    <th scope="col">Miercoles</th>
+                                    <th scope="col">Jueves</th>
+                                    <th scope="col">Viernes</th>
+                                    <th scope="col">S�bado</th>
+                                    <th scope="col">Domingo</th>
+                                    <th scope="col">Horas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+									<%cStrOtras%>
+                                </tbody>
+                            </table>
+                             <!-- fin table-->
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- fin tabla 2-->
+                      <!-- start tabla 3-->
+                      <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body table-responsive">
+                              <!-- start table-->
+                              <table class="table table-striped table-hover table-bordered">
+                                <tbody>
+                                  <%cStrPar%>
+                                </tbody>
+                              </table>
+                              <!-- fin table-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--fin tabla 3-->
+                      <!-- start tabla 4-->				  
+					  <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">						  
+						    <div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+                              <h6 class="m-0 fw-bold text-center">Video</h6>
+                            </div>
+							<div class="ratio ratio-16x9">
+							  <iframe src="https://player.vimeo.com/video/673525661?h=7eb09ac9e3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="seguimientodepartamental.mp4">
+							</div>
+                        </div>                        
+                      </div>
+                      <!--fin tabla 4-->						
+                    </div>
+
+                </div>
+                <!-- fin cuerpo de la tarjeta-->
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

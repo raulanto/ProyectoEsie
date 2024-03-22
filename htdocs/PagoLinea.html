@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Pago en L�nea del Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />	
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>	
+    <script src="/intertec/js/pagosz.js"></script>	
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css">	
+    <link rel="stylesheet" href="/intertec/css/sweetalert2.min.css">
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+
+	<script> 
+    $(function(){
+      $("#INotDeposito").load("/<%cpsie%>/notas/Deposito.html"); 
+    });
+    </script> 
+	<script language="JavaScript">
+	<!--
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>		
+	<style>body{background-color: <%dinsti.swtapb%>}</style>
+</head>
+
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integraci�n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 fw-bold text-secondary text-center">Pagos en linea</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">              
+						<!--start cuadro de datos superior -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 table-responsive">
+                                    <div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos de la compra</h6>
+									</div>
+									<table class="table table-hover table-bordered table-sm">
+										<tbody>
+											<tr>
+												<td class="bg-light">Estudiante</td><td><strong><%cnombre%></strong></td>
+												<td class="bg-light">No. Control</td><td colspan="3"><strong><%cusuario%></strong></td>
+												<td class="bg-light">Carrera</td><td colspan="5"><strong><%ccarrera%></strong></td>
+											</tr>										
+										</tbody>
+									 </table>
+                                     <table class="table table-hover table-bordered table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th> Concepto</th>
+                                                <th> Cantidad</th>
+                                                <th> Monto</th>
+                                                <th> Subtotal</th>
+                                            </tr>
+                                        </thead>
+										<tbody>
+											<tr>
+												<td class="bg-light"><strong><%cConceptod%></strong></td>
+												<td class="bg-light"><strong>1</strong></td>
+												<td class="bg-light"><strong><%cImporte%></strong></td>
+												<td class="bg-light"><strong><%cImporte%></strong></td>
+												<input type="hidden" name="description" id="description" value="<%cConceptod%>">
+												<input type="hidden" name="amount" id="amount" value="<%cImporte%>">
+												<input type="hidden" name="currency" id="currency" value="MXN">
+												<input type="hidden" name="order" id="order" value="<%cconcepto1%>-<%cfolio%>">
+											</tr>
+									    </tbody>                                 
+                                    </table>
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+							<!-- datos del cliente -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos del Cliente</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAbre" class="fw-bold">Nombre</label>
+                                                    <p><input type="text" name="name" id="name" class="form-control" > </p>
+                                                </div>
+                                                <div class="form-group col-md-8">
+                                                    <label for="inputAbre" class="fw-bold">Apellidos</label>
+                                                    <p><input type="text" name="last_name"  id="last_name" class="form-control"> </p>
+                                                </div>
+                                                <div class="form-group col-md-8">
+                                                    <label for="inputAbre" class="fw-bold">Correo electronico</label>
+                                                    <p><input type="email" name="email" id="email" class="form-control" placeholder="Email"> </p>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAbre" class="fw-bold">Telefono</label>
+                                                    <p><input type="tel" name="phone_number" id="phone_number" class="form-control"> </p>
+                                                </div>
+
+											</div>
+											
+										</div>
+									        
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos personales -->
+							<!-- Datos de la tarjeta -->
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Datos de la Tarjeta</h6>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAbre" class="fw-bold">Nombre del tarjeta habiente</label>
+                                                    <p><input type="text" name="holder_name" id="holder_name" size="25" class="form-control"> </p>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAbre" class="fw-bold">Numero de tarjeta</label>
+                                                    <p><input type="number" name="card_number" id="card_number" class="form-control"> </p>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputAbre" class="fw-bold">Mes de expiracion</label>
+                                                    <p><input type="number" name="expiration_month" id="expiration_month" maxlength="2" size="2" max="12" class="form-control"> </p>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputAbre" class="fw-bold">Anio de expiracion</label>
+                                                    <p><input type="number" name="expiration_year" id="expiration_year" maxlength="2" size="2" max="99" class="form-control"> </p>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputAbre" class="fw-bold">Codigo de seguridad (CVV)</label>
+                                                    <p><input type="number" name="cvv2" id="cvv2" size="10" maxlength="3" class="form-control"></p>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAbre" class="fw-bold"><h1>Monto a Pagar</label>
+                                                        <span><%cImporte%></span></h1>
+                                                    <p></p>
+                                                </div>
+											</div>                                
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div align="center">
+                                                    <input type="button" class="btn btn-primary btn-lg" name="pagar" value="Pagar" onclick="enviarPago();"> 
+                                                </div>
+											</div>										
+										</div>										
+									</div>
+								</div>
+							</div>
+							<!-- Fin datos de la tarjeta -->
+						</div>
+						<!--fin cuadro de datos superior -->
+					</div>
+					<!--fin cuerpo de la tarjeta -->	
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- fin contenido -->
+</body>
+</html>

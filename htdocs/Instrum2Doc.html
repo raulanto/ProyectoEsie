@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Docentes</title>
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+	<script language="Javascript" src="/intertec/js/refrescar2.js"></script>
+	<script src="/intertec/js/funcionconfirmar.js"></script>
+
+	<script language=JavaScript>	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+  <!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5 class="text-white">Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+         <div class="col-lg-12 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h5 class="m-0 font-weight-bold text-secondary text-center">Instrumentaci&oacute;n Did&aacute;ctica por Competencias</h5>
+                </div>
+                <!-- cuerpo de la tarjeta-->
+                <div class="card-body">              
+                    <!--start cuadro de datos superior -->
+                    <div class="container">
+                      <div class="row">
+                          <div class="col-sm-14 table-responsive">
+                              <table class="table table-hover table-bordered table-sm">
+                                    <tr>
+                                      <td class="bg-light">Per&iacute;odo</td><td><strong><%tperiodo%></strong></td>
+                                      <td class="bg-light">Nombre</td><td colspan="3"><strong><%tnom%></strong></td>
+                                    </tr>
+                                    <tr>
+                                      <td class="bg-light">Materia</td><td><strong><%tmatnom%></strong></td>
+                                      <td class="bg-light">Grupo</td><td><strong><%tgrupo%></strong></td>
+                                      <td class="bg-light">Plan</td><td><strong><%tcarnom%></strong></td>
+                                    </tr>
+									<tr><td class="bg-light" colspan="2">Horas Te&oacute;ricas-Pr&aacute;ctica-Cr&eacute;ditos</td><td colspan="4"><strong><%thoras%></strong></td></tr>
+									<tr><td class="bg-light">1.Caracterizaci&oacute;n  de la Asignatura</td><td colspan="5"><textarea cols='120' rows='5' readonly disabled><%tmatcaa%></textarea></td></tr>
+									<tr><td class="bg-light">2.Intenci&oacute;n Did&aacute;ctica</td><td colspan="5"><textarea cols='120' rows='5' readonly disabled><%tmatpla%></textarea></td></tr>
+									<tr><td class="bg-light">3.Competencia Espec&iacute;fica de la Asignatura</td><td colspan="5"><textarea cols='120' rows='5' readonly disabled><%tmatcoe%></textarea></td></tr>
+                              </table>
+                          </div>
+                      </div>
+                    </div>
+                    <!--fin cuadro de datos superior -->
+					<!-- start table-->
+					<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+                    <div class="row py-1">
+                        <div class="col-sm-12">
+							<div class="card">
+								<div class="card-body table-responsive">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 fw-bold text-center">Importar Instrumetaci&oacute;n</h6>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<label for="inputimppdo">Periodo</label>
+											<%cImpPdo%>
+										</div>
+										<div class="col-md-6">
+											<label for="inputimpins">Instrumentaci&oacute;n</label>
+											<DIV ID="divInstr">
+												<%cImpIns%>
+											</DIV>
+										</div>
+									</div>
+									  <td align="center"> 
+                                          <div class="row text-center">
+                                            <div class="col-lg-12">
+											<%cBotoni%>
+											</div>
+                                          </div>
+                                      </td>
+								</div>
+							</div>
+						</div>
+					</div>
+					</form>
+                    <!-- fin table-->
+                    <!-- start tabla 1 -->
+                    <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body table-responsive">
+                              <!-- start table-->
+                              <table class="table table-bordered">
+                                <thead>
+								  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="7">- LOS LINK EN LA COLUMNA (4.2) LE PERMITEN ACCESAR A LA CAPTURA DE LA INSTRUMENTACION DIDACTICA DE CADA COMPETENCIA</th></tr> 
+							      <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="7">4.An&aacute;lisis por competencias espec&iacute;ficas</th></tr>
+                                  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+                                    <th scope="col">4.1.Competencia</th>
+                                    <th scope="col">4.2.Descripci&oacute;n</th>
+                                    <th scope="col">4.3.Temas y Subtemas</th>
+                                    <th scope="col">4.4.Actividades de Aprendizaje</th>
+                                    <th scope="col">4.5.Actividades de Ense&ntilde;anza</th>
+									<th scope="col">4.6.Desarrollo de Competencias Gen&eacute;ricas</th>
+									<th scope="col">4.7.Horas Te&oacute;rico-Pr&aacute;cticas</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+									<%cTemario%>
+                                </tbody>
+                            </table>
+                            <!-- fin table-->
+                           </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- fin tabla 1 -->
+					<form method="post" action="/cgi-bin/sie.pl" name="forma2">
+                    <!-- start tabla 2 -->
+                    <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body table-responsive">
+                              <!-- start table-->
+                              <table class="table table-bordered">
+                                <thead>
+								  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="2">5.Fuentes de Informaci&oacute;n y Apoyos Did&aacute;cticos</th></tr> 
+                                  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+                                    <th scope="col">5.1.Fuentes de Informaci&oacute;n</th>
+                                    <th scope="col">5.2.Apoyos Did&aacute;cticos</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+									  <%cTemCap%>
+                                </tbody>
+                            </table>
+                            <!-- fin table-->
+                           </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- fin tabla 2 -->
+                    <!-- start tabla 3 -->					
+                    <div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+                            <div class="card-body table-responsive">
+                              <!-- start table-->
+                              <table class="table table-bordered">
+                                <thead>
+								  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="17">6.Calendarizaci&oacute;n</th></tr> 
+                                  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+                                    <th scope="col">Semana</th>
+									<%ctemcalenc%>
+                                  </tr>								  
+                                </thead>
+                                <tbody>
+									  <%cTemCal%>
+							          <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="17">- NOTA: En caso de ser una evaluaci&oacute;n en la semana escribir 00 en la segunda opci&oacute;n y nada si no se evalua en la semana </th></tr>
+							          <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="17">- ED=Evaluaci&oacute;n Diagn&oacute;stica. EFn=Evaluaci&oacute;n formativa. ES=Evaluaci&oacute;n Sumativa</th></tr>
+							          <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="17">- TP=Tiempo Planeado. TR=Tiempo Real. SD=Seguimiento Departamental</th></tr>
+									  <tr>
+									  <td><%cBoton%></td><td colspan="16"></td>
+									  </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- fin table-->
+                           </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- fin tabla 3 -->
+					</form>					
+					<!-- start tabla 4-->
+					<div class="row py-1">
+                        <div class="col-sm-12">
+                          <div class="card">
+						  	<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+                              <h6 class="m-0 fw-bold text-center">Video</h6>
+                            </div>
+							<div class="ratio ratio-4x3">
+							  <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/673525689?h=3f687bdf62&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"></iframe>
+						    </div>
+					      </div>
+                        </div>                        
+                    </div>
+					<!--fin tabla 4-->
+                </div>
+                <!-- fin cuerpo de la tarjeta-->
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

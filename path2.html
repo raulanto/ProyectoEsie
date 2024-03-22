@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script language="Javascript" src="/intertec/js/flotante.js"></script>
+
+    <meta charset="iso-8859-15" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sie Docentes</title>
+    <link rel="stylesheet" href="intertec/css/bootstrap.min.css" />
+    <script src="intertec/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="intertec/css/sweetalert2.min.css" />
+    <script src="intertec/js/sweetalert2.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <script language="Javascript" src="intertec/js/refrescar2.js"></script>
+    <script src="intertec/js/funcionconfirmar.js"></script>
+
+    <script language="JavaScript">
+        //Disable right click script III- By Renigade (renigade@mediaone.net)
+        //For full source code, visit http://www.dynamicdrive.com
+
+        var message = "";
+        ///////////////////////////////////
+        function clickIE() {
+            if (document.all) {
+                message;
+                return false;
+            }
+        }
+        function clickNS(e) {
+            if (document.layers || (document.getElementById && !document.all)) {
+                if (e.which == 2 || e.which == 3) {
+                    message;
+                    return false;
+                }
+            }
+        }
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown = clickNS;
+        } else {
+            document.onmouseup = clickNS;
+            document.oncontextmenu = clickIE;
+        }
+
+        document.oncontextmenu = new Function("return false");
+        // -->
+    </script>
+    <style>
+        body {
+            background-color: #6f7271;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- barra superior-->
+    <header class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center"
+            style="background-color: #10312b; color: #ffffff">
+            <h5 class="text-white">Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </header>
+    <!-- start contenido -->
+    <main class="container-fluid">
+        <section class="row py-1">
+            <article class="col-lg-12 mb-4">
+                <div class="card shadow mb-4">
+                    <header class="card-header py-3">
+                        <h5 class="m-0 font-weight-bold text-secondary text-center">
+                            PLAN DE ACCIÓN TUTORIAL (PAT)
+                        </h5>
+                    </header>
+                    <!-- cuerpo de la tarjeta-->
+                    <section class="card-body">
+                        <!--start cuadro de datos superior -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-14 table-responsive">
+                                    <table class="table table-hover table-bordered table-sm">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bg-light">
+                                                    Plan de acción <strong>2023</strong> periodo
+                                                </td>
+                                                <td colspan="3">
+                                                    <strong>Ene-Jun 2023 / Ago-Dic 2023</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-light">Nombre del Tutor (a)</td>
+                                                <td><strong>JOSE MANUEL GOMEZ ZEA</strong></td>
+                                                <td class="bg-light">Tutorados (as) Asignados</td>
+                                                <td><strong>10</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-light">Programa educativo</td>
+                                                <td>
+                                                    <strong>ING. EN SISTEMAS COMPUTACIONALES</strong>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fin cuadro de datos superior -->
+                        <form method="post" action="/cgi-bin/sie.pl" name="forma2">
+                            <!-- start tabla 2 -->
+                            <section class="row py-1">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body table-responsive">
+                                            <!-- start table-->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr style="background-color: #bc955c; color: #ffffff">
+                                                        <th scope="col">Lista de estudiantes</th>
+                                                        <th scope="col">Materias Reprobadas</th>
+                                                        <th scope="col">Promedio general</th>
+                                                        <th scope="col">Numero de veces Canalizado</th>
+                                                        <th scope="col">
+                                                            AREA CANALIZADA (RAZON POR LA CUAL FUE
+                                                            CANALIZADO)
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input class="form-control form-control-sm" type="text"
+                                                                data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                                maxlength="8" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-control-sm" type="text"
+                                                                data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                                maxlength="8" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-control-sm" type="text"
+                                                                data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                                maxlength="8" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control form-control-sm" type="text"
+                                                                data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                                maxlength="8" />
+                                                        </td>
+                                                        <td><textarea class="form-control form-control-sm" cols="10"
+                                                            rows="2"></textarea>
+                                                    </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- fin table-->
+                                        </div>
+                                        <div class="card-footer">
+                                            <ul>
+                                                <li>
+                                                    A este reporte deberá ser anexado las evidencias de
+                                                    actividades de cada tutorado.
+                                                </li>
+                                                <li>
+                                                    Este reporte deberá ser llenado por el tutor. li>
+                                                </li>
+
+                                                <li>
+                                                    Deberá ser entregada al Coordinador de Tutoría del
+                                                    Departamento Académico con Copia para el Tutor.
+                                                </li>
+                                                <li>
+                                                    Si existieran alumnos dados de baja, anotar la razón
+                                                    si se conociera.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="row py-1">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body table-responsive">
+                                            <!-- start table-->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr style="background-color: #bc955c; color: #ffffff">
+                                                        <th scope="col">Tutorados: Baja temporal</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <td>
+                                                        <input class="form-control form-control-sm" type="text"
+                                                            data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                            maxlength="8" />
+                                                    </td>
+                                                </tbody>
+                                            </table>
+                                            <!-- fin table-->
+                                        </div>
+                                        <!-- <div class="card-footer">
+                                            <ul>
+                                                <li>A este reporte deberá ser anexado las evidencias de actividades de cada tutorado.
+                                                </li>
+                                                <li>Este reporte deberá ser llenado por el tutor.
+                                                    li>
+                                                <li>Deberá ser entregada al Coordinador de Tutoría del Departamento Académico con Copia para el Tutor.</li>
+                                                <li>
+                                                    Si existieran alumnos dados de baja, anotar la razón si se conociera.
+
+                                                </li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="row py-1">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body table-responsive">
+                                            <!-- start table-->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr style="background-color: #bc955c; color: #ffffff">
+                                                        <th scope="col">Tutorados: Baja Definitiva</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <td>
+                                                        <input class="form-control form-control-sm" type="text"
+                                                            data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                            maxlength="8" />
+                                                    </td>
+                                                </tbody>
+                                            </table>
+                                            <!-- fin table-->
+                                        </div>
+                                        <!-- <div class="card-footer">
+                                            <ul>
+                                                <li>A este reporte deberá ser anexado las evidencias de actividades de cada tutorado.
+                                                </li>
+                                                <li>Este reporte deberá ser llenado por el tutor.
+                                                    li>
+                                                <li>Deberá ser entregada al Coordinador de Tutoría del Departamento Académico con Copia para el Tutor.</li>
+                                                <li>
+                                                    Si existieran alumnos dados de baja, anotar la razón si se conociera.
+
+                                                </li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="row py-1">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body table-responsive">
+                                            <!-- start table-->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr style="background-color: #bc955c; color: #ffffff">
+                                                        <th scope="col">SI EXISTIERA ALUMNOS DE BAJA DEFINITIVA, Y SE CONOCEN LAS CAUSAS, DESCRIBIRLO BREVEMENTE</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <td>
+                                                        <input class="form-control form-control-sm" type="text"
+                                                            data-mask="EF99EF99" value="" name="c" id="cr0101"
+                                                            maxlength="8" />
+                                                    </td>
+                                                </tbody>
+                                            </table>
+                                            <!-- fin table-->
+                                        </div>
+                                        <!-- <div class="card-footer">
+                                            <ul>
+                                                <li>A este reporte deberá ser anexado las evidencias de actividades de cada tutorado.
+                                                </li>
+                                                <li>Este reporte deberá ser llenado por el tutor.
+                                                    li>
+                                                <li>Deberá ser entregada al Coordinador de Tutoría del Departamento Académico con Copia para el Tutor.</li>
+                                                <li>
+                                                    Si existieran alumnos dados de baja, anotar la razón si se conociera.
+
+                                                </li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- fin tabla 2 -->
+                        </form>
+                    </section>
+                    <!-- fin cuerpo de la tarjeta-->
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- fin contenido -->
+    <br />
+    <p align="right"><i>Sistema de Integración Escolar</i></p>
+</body>
+
+</html>

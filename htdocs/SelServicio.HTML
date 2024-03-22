@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Solicitud de Servicios del Estudiante</title>
+	<link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+
+	<title>Selección de Servicios</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<style type="text/css">
+
+	tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small}
+	body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: smaller}
+
+	.myButton:hover
+	{
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+		background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+		background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+		background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+		background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+		background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
+		background-color:#1e62d0;
+	}
+
+	table
+	{
+		width: 100%;
+		font: normal 20px Arial;
+		text-align: center;
+		border-collapse: collapse;
+	}
+
+	table th
+	{
+		font: bold 30px Arial;
+		
+		background-color: lightskyblue;
+	}
+	th, td
+	{
+
+		font: normal 15px Arial;
+		padding: 4px;
+	}
+	</style>
+</head>
+
+<body bgcolor="#FFFFFF" <%cBody%>>
+<H1><FONT COLOR="#0080C0"><CENTER>Servicios disponibles</CENTER></H1>
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#CCCCFF"> 
+      <td width="3%" height="28">&nbsp;</td>
+      <td width="10%" height="28"> <div align="center">Código</div></td>
+      <td width="40%" height="28"> <div align="center">Descripción</div></td>
+      <td width="10%" height="28"> <div align="center">Importe</div></td>
+      <td width="10%" height="28"> <div align="center">Vigencia</div></td>
+      <td width="10%" height="28"> <div align="center">Observaciones</div></td>
+    </tr>
+    <%cSelServicio%>
+  </table>    
+
+  <p></p>  
+  <div>
+	<input type="hidden" name="Opc" value="AGREGASER">
+	<input 
+		style="border-radius:6px;
+		padding:6px 24px;
+        color: #ffffff; 
+        background-color: #3d94f6; 
+        border: 1px solid #337fed; 
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #1570cd;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        box-shadow: inset 0px 1px 0px 0px #97c4fe;"
+	type="submit" 
+	name="Agregar" 
+	class="myButton"
+	value="Agregar">
+	<input type="hidden" name="Control" value=<%cUsuario%>>
+	<input type="hidden" name="Password" value=<%cPassword%>>
+    <input type="hidden" name="psie" value=<%cpsie%>>
+	<input type="hidden" name="dummy" value=0>
+  </div>
+
+  
+  <h2 align="center">Domicilio Actual</h2>
+  <p align="center">NO OMITA ACTUALIZAR SUS DATOS PERSONALES, ESPECIALMENTE EL CORREO ELECTRONICO SERA MUY UTIL PARA BRINDARLE UN MEJOR SERVICIO EN TRAMITES (CALLE, CIUDAD, CORREO Y AL MENOS UN TELEFONO, SON OBLIGATORIOS)</p>
+  <TABLE BORDER='1' WIDTH=70% CELLSPACING=0 CELLPADDING=5>  
+
+	  <TR bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Calle</TD>		    
+		<TD width="30%"><input name="tcll" size="40" type="text" id="tcll" maxlength="40" width="250" value="<%tcll%>"></TD>
+		<TD width="6%" height="35">N&uacute;mero</TD>
+		<TD width="21%"><input name="tnum" size="10" type="text" id="tnum" maxlength="10" width="100" value="<%tnum%>"></TD>
+	  </TR>
+	  <TR bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Colonia</TD>
+		<TD><input name="tcol" size="30" type="text" id="tcol" maxlength="30" width="250" value="<%tcol%>"></TD>
+		<TD width="6%" height="35">Ciudad</TD>
+		<TD><input name="tciu" size="30" type="text" id="tciu" maxlength="30" width="250" value="<%tciu%>"></TD>
+		<TD width="6%" height="35">C.P.</TD>
+		<TD width="32%"><input name="tcpo" size="5" type="text" id="tcpo" maxlength="5"  width="100" value="<%tcpo%>"></TD>
+	  </TR>
+	  <TR  bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Tel&eacute;fono</TD>
+		<TD><input name="tte1" size="13" type="text" id="tte1" maxlength="13" width="100" value="<%tte1%>"></TD>
+		<TD width="5%" height="35">Celular</TD>
+		<TD><input name="tte2" size="13" type="text" id="tte2" maxlength="13" width="100" value="<%tte2%>"></TD>
+	  </TR>
+	  <TR  bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Correo Electr&oacute;nico</TD>
+		<TD><input name="tmai" size="40" type="text" id="tmai" maxlength="40" width="400%" value="<%tmai%>"></TD>
+		<TD width="5%" height="35">RFC</TD>
+		<TD><input name="trfc" size="13" type="text" id="trfc" maxlength="13" width="100" value="<%trfc%>"></TD>
+	  </TR> 
+  </TABLE>
+  <!--
+   <input type="hidden" name="Opc" value="AGREGASER">
+   <input type="submit" name="Agregar" value="Agregar">
+   <input type="hidden" name="Control" value=<%cUsuario%>>
+   <input type="hidden" name="Password" value=<%cPassword%>>
+   <input type="hidden" name="psie" value=<%cpsie%>>
+   <input type="hidden" name="dummy" value=0>
+   -->
+</form>
+</body>
+</html>

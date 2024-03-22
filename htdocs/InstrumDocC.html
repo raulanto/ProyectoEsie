@@ -1,0 +1,74 @@
+<html>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<head>
+  <meta http-equiv="Content-Type"
+  content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+  <title>Calificaciones</title>
+</head>
+
+<body bgcolor="#ffffff" bgproperties="fixed">
+<CENTER>
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Periodo</FONT></TD><TD><%tperio%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Materia</FONT></TD><TD><%tmateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff" size=2>Grupo</FONT></TD><TD><%cMateria%></TD></TR>
+  <%cTemarioG%>
+</TABLE>
+</CENTER>
+  <TABLE BORDER="1" WIDTH="100%" CELLSPACING=0 CELLPADDING=0>
+    <TR>
+    <TD width="5%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Unidad</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Competencia Especifica</FONT></TD>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR="#ffffff" size=2>Actividades de Aprendizaje</font></TD>
+    <TD width="15%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Actividades de Enseñanza</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Desarrollo de</FONT></TD>
+    <TD width="5%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Horas</FONT></TD>
+    <TD width="5%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Criterios de</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Fuentes</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Apoyos Didacticos</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Eval</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Núm.</FONT></TD>
+    <TD width="10%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Sem.</FONT></TD>
+    </TR>
+    <TR>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>De la Unidad</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2></FONT></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Competencias Genéricas</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>TeoPra</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Evaluación</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2></font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Diag</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Form</font></TD>
+    <TD BGCOLOR='#0080c0'><font color="#ffffff" size=2>Suma</font></TD>
+    </TR>
+    <%cTemCap%>
+  </TABLE>
+<font size="1">
+<ADDRESS><BR><FONT size=3>- LOS LINK EN LA COLUMNA (CONTENIDOS) LE PERMITEN ACCESAR A 
+LA CAPTURA DE LA INSTRUMENTACION DIDACTICA DE CADA UNIDAD</FONT></ADDRESS> </font> 
+</body>
+</html>

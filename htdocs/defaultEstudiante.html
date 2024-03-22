@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema SIE</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<FRAMESET COLS="25%,*" BORDER=0>
+    <FRAME NAME="menuTop" SRC="/cgi-bin/sie.pl?Opc=MENUTOP&Control=<%cUsuario%>&Password=<%cPassword%>&psie=<%cpsie%>&dummy=0" SCROLLING="Auto">
+  <FRAME NAME="principal" SRC="/cgi-bin/sie.pl?Opc=DATOSALU&Control=<%cUsuario%>&Password=<%cPassword%>&psie=<%cpsie%>&dummy=0" SCROLLING="Auto">
+</FRAMESET>
+<NOFRAMES>
+  <body>
+  <p>Esta página usa marcos, pero su explorador no los admite.</p>
+  </body>
+</NOFRAMES>
+</HTML>

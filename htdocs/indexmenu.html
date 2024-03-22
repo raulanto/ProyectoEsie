@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema SIE</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+    <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+        <h3>Sistema de Integración Escolar (SIE)</h3>
+    </nav>
+    <br /><br />
+      
+    <div class="container py-4">
+        <div class="row justify-content-center mb-5 mt-5">
+            <div style="text-align:center"><img src="<%tlogo%>" alt="Card image cap"></div>
+            <div style="text-align:center"><%dinsti.insnom%></div>
+        </div>
+    </div>
+
+    <div class="mt-4 p-5 bg-light text-dark rounded">
+        <div class="container">
+			<div class="featured-boxes featured-boxes-style-7">
+				<div class="row">
+					<%cmenu%>
+				</div>
+			</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <nav class="navbar fixed-bottom justify-content-center navbar-expand-sm">
+      <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">&copy; 2022 Copyright:
+            <a href="http://www.esie.mx" target="_blank">esie.mx</a>
+        </div>
+    </nav>
+    <!-- Footer -->
+
+</body>
+</html>

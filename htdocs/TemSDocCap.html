@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+
+<script language=JavaScript>
+<!--
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<link href="/intertec/css/CalendarControl.css"      rel="stylesheet" type="text/css">
+<script src="/intertec/js/CalendarControl.js"        language="javascript"></script>
+</HEAD>
+
+<BODY>
+<H1><FONT COLOR="#0080c0"><CENTER>Temario</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Periodo</FONT></TD><TD><%tperio%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Materia</FONT></TD><TD><%tmateria%></TD></TR>
+  <TR><TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Grupo</FONT></TD><TD><%cMateria%></TD></TR>
+  <%cTemarioG%>  
+</TABLE></CENTER>
+<CENTER>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <TABLE BORDER="1" WIDTH="100%" CELLSPACING=0 CELLPADDING=0>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD width="30%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Programada</FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Real      </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Evaluación</FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>          </FONT></TD></TR>
+    <TR>
+    <TD width="20%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Temas     </FONT></TD>
+    <TD width="30%" height="20" BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Subtemas  </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Inicio    </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Término   </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Inicio    </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Término   </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Programada</FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Real      </FONT></TD>
+    <TD BGCOLOR='#0080c0'><FONT COLOR='#ffffff' size=2>Observaciones</FONT></TD></TR>
+    <%cTemario%>
+  </TABLE>
+  <%cTemarioBoton%>
+</form></CENTER>
+<CENTER>&nbsp;</CENTER>
+<DIV align=left></FONT>- Para los periodos reales, en caso de que no estén 
+capturados, el sistema automáticamente muestra las mismas semanas de la 
+planeación. </DIV>
+<DIV align=left>
+<ADDRESS>- Deberá de guardarlas si desea que estas se registren, no omita 
+eliminar las semanas de subtemas que no han sido concluidos.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- La planeacion y el seguimiento real de los subtemas se realiza 
+por número de semana de la 1 a la 16.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- Revise la pagina anterior para revisar las semanas y fechas que han
+sido guardadas.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- No registre semana de inicio y terminación de subtemas si este no ha 
+sido concluido.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- Las semanas de la planeación serán bloqueadas para no ser modificadas, 
+una vez entregada y firmada por su Jefe Académico.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- Las semanas reales que entren en un reporte entregado serán bloqueadas 
+para no ser modificadas.</ADDRESS></DIV>
+<DIV align=left>
+<ADDRESS>- El la columna de OBSERVACIONES, anotar las prácticas de laboratorio,
+visitas a empresas, otras actividades academicas o las observaciones.</ADDRESS></DIV>
+<FONT color=#0080c0>
+<CENTER></CENTER></FONT>
+</BODY></HTML>

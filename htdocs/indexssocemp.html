@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE SERVICIO SOCIAL EMPRESAS</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+    <!-- Alert -->
+    <script type="text/javascript">
+	/*
+           Swal.fire({
+            title: 'Bienvenido...',
+            text: 'Gracias por visitar el Sistema de Integración Escolar!',
+            })
+	*/
+    </script>
+    <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+        <h3>Sistema de Integración Escolar (SIE)</h3>
+    </nav>
+    <br><br>
+    <div role="main" class="main shop py-4">
+        <!-- Start container -->
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5 mb-5 mb-lg-0">
+					<!-- Start Card-->
+					<div class="card">
+						<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+							<h6 class="mb-0 fw-bold text-center py-1">Iniciar Sesión</h6>
+						</div>
+						<div class="card-body">
+							<div style="text-align:center">
+								<a href="<%dinsti.insurl%>"><img src="<%tlogo%>" alt="Card image cap"></a>
+							</div>
+							<!-- Start form -->
+							<form action="/cgi-bin/sie.pl/" id="frmSignIn" method="post" class="needs-validation">
+								<input type="hidden" name="Opc" value="MAINSSOCEMP">
+								<input type="hidden" name="psie" value="<%cpsie%>">
+								<!-- número -->
+								<div class="row">
+									<div class="mb-3">
+										<label class="form-label text-dark text-3">Clave<span class="text-color-danger">*</span></label>
+										<input type="text" name="Control" size="8" maxlength="8" class="form-control form-control-lg text-4" autocomplete="off" required=""> 
+									</div>
+								</div>
+								<!-- clave -->
+								<div class="row">
+									<div class="mb-3">
+										<label class="form-label text-dark text-3">Clave de Acceso<span class="text-color-danger">*</span></label>
+										<input type="password" size="10" maxlength="10" name="password" class="form-control form-control-lg text-4" autocomplete="off"> 
+									</div>
+								</div>
+								<div class="row">
+									<div class="mb-3">
+										<input type="submit" name="aceptar" value="ACEPTAR" class="btn btn-secondary btn-modern w-100 rounded-0 fw-bold text-3 py-3">
+									</div>
+								</div>
+								<div class="row">
+									<div class="mb-3">
+									<span class="text-decoration-none text-primary fw-semibold" style="white-space: initial;" style="cursor:hand;" onclick="window:parent.location='/<%cpsie%>/indexestudianteca2.html'">Recuperar Clave de Acceso</span>
+									</div>
+								</div>
+							</form>
+							<!-- End form -->
+						</div>
+						<div class="card-footer bg-grey text-1 text-center">
+							BIENVENIDO
+						</div>
+					</div>
+				</div>
+				<!-- End Card--> 
+			</div>
+        </div>            
+        <!-- End container -->        
+    </div>
+	<!-- Footer -->
+	<nav class="navbar fixed-bottom justify-content-center navbar-expand-sm">
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">&copy; 2022 Copyright:
+			<a href="http://esie.mx" target="_blank"> esie.mx</a>
+		</div>
+	</nav>
+	<!-- Footer -->
+</body>
+</html>

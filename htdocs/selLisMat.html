@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIE Selección de grupos</title>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>		
+	<style type="text/css">
+	<!--
+	tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: xx-small}
+	body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: smaller}
+	-->
+	</style>
+</head>
+
+<body bgcolor="#FFFFFF" <%cBody%>>
+<p>Materias disponibles</p>
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#CCCCFF"> 
+      <td width="2%" height="28">&nbsp;</td>
+      <td width="5%" height="28" > <div align="center">Grupo</div></td>
+      <td width="7%" height="28"> <div align="center">Materia</div></td>
+      <td width="3%" height="28"> <div align="center">Tipo</div></td>
+      <td width="3%" height="28"> <div align="center">Spd</div></td>
+      <td width="6%" height="28"> <div align="center">Lunes</div></td>
+      <td width="6%" height="28"> <div align="center">Martes</div></td>
+      <td width="6%" height="28"> <div align="center">Miercoles</div></td>
+      <td width="6%" height="28"> <div align="center">Jueves</div></td>
+      <td width="6%" height="28"> <div align="center">Viernes</div></td>
+      <td width="6%" height="28"> <div align="center">Sabado</div></td>
+      <td width="6%" height="28"> <div align="center">Domingo</div></td>
+      <td width="3%" height="28"> <div align="center">Disp</div></td>
+      <td width="4%" height="28"> <div align="center">Base</div></td>
+      <td width="3%" height="28"> <div align="center">Disp</div></td>
+      <td width="4%" height="28"> <div align="center">Cred.</div></td>
+      <td width="4%" height="28"> <div align="center">Sem.</div></td>
+      <td width="17%" height="28"> <div align="center">Catedrático</div></td>
+      <td width="3%" height="28"> <div align="center">Plan</div></td>
+    </tr>
+    <%cSelLisMat%>
+  </table>     
+  <h2 align="center">Domicilio Actual</h2>
+  <p align="center">NO OMITA ACTUALIZAR SUS DATOS PERSONALES, ESPECIALMENTE EL CORREO ELECTRONICO SERA MUY UTIL PARA BRINDARLE UN MEJOR SERVICIO EN TRAMITES (CALLE, CIUDAD, CORREO Y AL MENOS UN TELEFONO, SON OBLIGATORIOS)</p>
+  <TABLE BORDER='1' WIDTH=70% CELLSPACING=0 CELLPADDING=5>  
+	  <TR bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Calle</TD>		    
+		<TD width="30%"><input name="tcll" size="40" type="text" id="tcll" maxlength="40" width="250" value="<%tcll%>" <%slectura%></TD>
+		<TD width="6%" height="35">N&uacute;mero</TD>
+		<TD width="21%"><input name="tnum" size="10" type="text" id="tnum" maxlength="10" width="100" value="<%tnum%>" <%slectura%>></TD>
+	  </TR>
+	  <TR bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Colonia</TD>
+		<TD width="20%"><input name="tcol" size="30" type="text" id="tcol" maxlength="30" width="250" value="<%tcol%>" <%slectura%>></TD>
+		<TD width="6%" height="35">Ciudad</TD>
+		<TD width="20%"><input name="tciu" size="30" type="text" id="tciu" maxlength="30" width="250" value="<%tciu%>" <%slectura%>></TD>
+		<TD width="6%" height="35">C.P.</TD>
+		<TD width="32%"><input name="tcpo" size="05" type="text" id="tcpo" maxlength="5"  width="100" value="<%tcpo%>" <%slectura%>></TD>
+	  </TR>
+	  <TR  bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Tel&eacute;fono</TD>
+		<TD width="20%"><input name="tte1" size="13" type="text" id="tte1" maxlength="13" width="100" value="<%tte1%>" <%slectura%>></TD>
+		<TD width="5%" height="35">Celular</TD>
+		<TD width="20%"><input name="tte2" size="13" type="text" id="tte2" maxlength="13" width="100" value="<%tte2%>" <%slectura%>></TD>
+	  </TR>
+	  <TR  bgcolor="#CCCCFF"> 
+		<TD width="5%" height="35">Correo Electr&oacute;nico</TD>
+		<TD width="30%"><input name="tmai" size="40" type="text" id="tmai" maxlength="40" width="250%" value="<%tmai%>" <%slectura%>></TD>
+		<TD width="5%" height="35">RFC</TD>
+		<TD width="30%"><input name="trfc" size="13" type="text" id="trfc" maxlength="13" width="100" value="<%trfc%>" <%slectura%>></TD>
+  	  </TR> 
+  </TABLE>
+   <TD><a href="https://www.recaudanet.gob.mx/recaudanet/rfc.jsp">OBTENGA SU RFC</a></TD>
+   <P>
+   <TD><a href="https://https://consultas.curp.gob.mx/CurpSP/">OBTENGA SU CURP</a></TD>
+   <P>
+   <input type="hidden" name="Opc" value="AGREGAMAT">
+   <input type="submit" name="Agregar" value="Agregar">
+   <input type="hidden" name="Control" value=<%cUsuario%>>
+   <input type="hidden" name="Password" value=<%cPassword%>>
+   <input type="hidden" name="psie" value=<%cpsie%>>
+   <input type="hidden" name="dummy" value=0>
+</form>
+</body>
+</html>

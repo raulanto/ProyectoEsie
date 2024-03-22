@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+	<script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<script language=JavaScript>	
+	<!--
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- contenido -->	
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Documentos en Expediente</h5>
+					</div>
+					<!-- comienza cuerpo de la tarjeta-->
+					<div class="card-body">
+						<div class="alert alert-success" role="alert">
+							Manifiesto bajo protesta de decir verdad, que habiendo revisado los datos que solicitan
+							para mi identificación y estudios realizados, declaro que la información dada, se apega 
+							estrictamente a la verdad y autorizo para verificarla total o parcialmente y en caso de 
+							que se comprobara que los datos presentados o los documentos presentados en este expediente 
+							sean falsos, me doy por enterado (a) que mi registro quedará cancelado sin tener derecho 
+							a volver a ingresar, siendo esta decisión inapelable, esto en apego a la Normatividad 
+							Vigente de la institución
+						</div>
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 table-responsive">
+									<table class="table table-bordered table-hover table-sm">
+										<tr>
+											<td class="bg-light" colspan="1">No. Control</td><td colspan="2"><strong><%cusuario%></strong></td>
+											<td class="bg-light" colspan="1">Nombre</td><td colspan="5"><strong><%tnom%></strong></td>
+											<td class="bg-light" colspan="1">CURP</td><td colspan="2"><strong><%tcur%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Extensión</td><td colspan="3"><strong><%text%></strong></td>
+											<td class="bg-light" colspan="1">Modalidad</td><td colspan="3"><strong><%tsis%></strong></td>
+											<td class="bg-light" colspan="1">Carrera</td><td colspan="3"><strong><%tcar%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Plan</td><td colspan="5"><strong><%tpla%></strong></td>
+											<td class="bg-light" colspan="1">Especialidad</td><td colspan="5"><strong><%tesp%></strong></td>
+										</tr>								
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->						
+						<div class="row py-3">
+						   	<%csubir%>
+							<%cSubirCerti%>  
+							<%cSubirActa%>
+							<%cSubirCurp%>
+						</div>
+					</div>
+					<!-- termina cuerpo de la tarjeta-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+	<script src="/intertec/js/funcionuploaddocu.js"></script>
+</html>

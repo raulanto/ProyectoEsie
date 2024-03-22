@@ -1,0 +1,108 @@
+<HTML>
+
+<HEAD>
+ <title>RESPUESTAS EXAMEN DE ADMISION</title>
+ <style>
+
+ fieldset {
+   background-color: #F5F5F5;
+   color: black;
+   font-size:larger;
+ }
+
+ legend {
+   background-color: #A9A9A9;
+   color: black;
+   font-size:larger;
+   padding: 5px 10px;
+ }
+
+ H3 {
+   color: blue;
+   font-size:larger;
+   margin: 5px;
+ }
+
+ input {
+   background-color: red;
+   color: white;
+   font-size:larger;
+   margin: 5px;
+ }
+ </style>
+</HEAD>
+
+<BODY>
+ <H3><CENTER>Examen de Admisión. Fecha y hora del Servidor <%cSerFec%> <%cSerHra%></CENTER></H3>
+
+ <TABLE BORDER='1' WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Clave CURP</TD>
+   <TD WIDTH=70% ><%tcur%></TD>
+  </TR>
+  <TR>
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre</TD>
+   <TD WIDTH=70% ><%tnom%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Extensión</TD>
+   <TD WIDTH=70% ><%cexten%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Modalidad</TD>
+   <TD WIDTH=70% ><%csiste%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Carrera</TD>
+   <TD WIDTH=70% ><%ccarre%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Ficha</TD>
+   <TD WIDTH=70% ><%tfic%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#CCCCFF">Fecha de Aplicación</TD>
+   <TD WIDTH=70% ><%cexafec%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#CCCCFF">Hora de Inicio</TD>
+   <TD WIDTH=70% ><%cexahrai%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#CCCCFF">Hora de Término</TD>
+   <TD WIDTH=70% ><%cexahrat%></TD>
+  </TR>
+  <TR> 
+   <TD WIDTH=30% BGCOLOR="#CCCCFF">Preguntas</TD>
+   <TD WIDTH=70% ><%cexapre%></TD>
+  </TR>
+ </TABLE>
+ <BR>
+ <TABLE BORDER='1' WIDTH="100%" CELLSPACING=0 CELLPADDING=5>
+  <TR BGCOLOR="#0080C0" FONT COLOR="#FFFFFF">
+   <%cEncab%>
+  </TR>
+ </TABLE>
+ <%clistaexa%>
+ <%cGuardar%>
+
+ <script type="text/javascript">  
+ function ValidatePetSelection(prpre)  
+ {  
+    var checkboxes = document.getElementsByName(prpre);  
+    var numberOfCheckedItems = 0;  
+    for(var i = 0; i < checkboxes.length; i++)  
+    {  
+        if(checkboxes[i].checked)  
+            numberOfCheckedItems++;  
+    }  
+    if(numberOfCheckedItems > 1)  
+    {  
+        alert("solo puede seleccionar una opción!");  
+        return false;  
+    }  
+ }  
+ </script>
+
+</BODY>
+</HTML>

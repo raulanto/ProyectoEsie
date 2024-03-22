@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Aspirantes</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<script language=JavaScript>
+	//<!---
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+
+	function collapse() {
+		top.document.body.cols='0,*';
+		const boton = parent.frames[1].document.createElement("button");
+		boton.innerHTML = "CLICK";
+		boton.style = "top:5px;left:20px;position:fixed;z-index:9999;"
+		boton.setAttribute("onclick", "top.document.body.cols='25%,*'; document.getElementById('flotante').remove();");
+		boton.setAttribute("id", "flotante");
+		parent.frames[1].document.body.appendChild(boton);
+	};
+	function expandir()
+	{
+		top.document.body.cols='25%,*';
+		document.getElementById('flotante').remove();
+	} 
+	// --> 
+	</script>
+</head>
+<style>
+    body{background-color: <%dinsti.swmenb%>}
+</style>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 mt-1 mt-lg-0">
+                <div class="list-group" style="display:flex;width: 100%;">
+ 					<main>
+						<nav class="navbar navbar-light" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+							<div class="container-fluid">
+								<h6 class="navbar-text" style="color: <%dinsti.swtitc%>;">ACCESOS</h6>
+								<button onclick="collapse()" class="navbar-toggler" style="background-color: <%dinsti.swtitc%>; color: <%dinsti.swtitc%>;" type="button" data-bs-toggle="collapse" data-bs-target="#navbars01" aria-controls="navbars01" aria-expanded="true">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse show" id="navbars01" aria-expanded="true">
+									<ul class="navbar-nav me-auto mb-2">
+									    <%cmenu%>
+										<span class="btn btn-outline btn-light rounded-0 mb-2" style="white-space: initial; cursor:hand; text-align:left; color:<%dinsti.swmenc%>" onClick="javascript:parent.principal.location='/cgi-bin/sie.pl?Opc=CSESIONFIC&Control=<%cUsuario%>&Password=<%cPassword%>&psie=<%cpsie%>&dummy=0'"><strong>Salir</strong></span>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</main>
+                </div>  
+                <div class="py-5 mt-5 text-center" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+                    <span class="mb-4" style="white-space: initial;"><strong>Hoy es un d&iacute;a perfecto! </strong> para mejorar!</span>
+                </div>
+            </div>
+        </div>
+         <!-- Footer -->
+		<nav class="navbar fixed-bottom navbar-light justify-content-center">
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3" style="color: <%dinsti.swtabc%>">&copy; 2022 Copyright:
+				<a href="http://esie.mx" target="_blank" style="color: <%dinsti.swtabc%>"> esie.mx</a>
+			</div>
+		</nav>
+		<!-- Footer -->               
+    </div>
+	<script src="/intertec/js/bootstrap.bundle.min.js"></script>     
+</body>
+</html>

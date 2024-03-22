@@ -1,0 +1,133 @@
+<HTML>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY>
+<H1><FONT COLOR="#0080c0"><CENTER>
+  <p>Proceso de Residencia</p>
+  <h5>&quot;SE CONSIDERA RESIDENCIA PROFESIONAL A AQUELLA ACTIVIDAD, REALIZADA DURANTE EL DESARROLLO DE UN PROYECTO O EN LA APLICACION PRACTICA DE UN MODELO, EN CUALQUIERA DE LAS AREAS DE DESARROLLO ESTABLECIDAS, QUE DEFINAN UNA PROBLEMATICA Y PROPONGAN UNA SOLUCION VIABLE, A TRAVES DE LA PARTICIPACION DIRECTA DEL ALUMNO EN DESEMPE&Ntilde;OS PROPIOS DE SU FUTURA PROFESION Y PARA LO CUAL SE REQUIERE, DE 640 HORAS DISTRIBUIDAS EN 4 MESES 8 HORAS DIARIAS O 6 MESES 6 HORAS DIARIAS&quot; </h5>
+</CENTER></H1>
+<CENTER>
+<IMG src="/f<%cpsie%>/<%tfot%>" WIDTH=100 border=0>
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Nombre del Alumno</FONT></TD>
+    <TD><%tnom%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Carrera</FONT></TD>
+    <TD><%tcar%></TD>
+  </TR>
+</TABLE>
+</CENTER>
+<H1><FONT COLOR="#0080c0"><CENTER>Proyecto</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH="80%" CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Fecha de Solicitud</FONT></TD>
+    <TD><%tfso%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Opción</FONT></TD>
+    <TD><%topc%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Proyecto</FONT></TD>
+    <TD><%tpry%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Duración</FONT></TD>
+    <TD><%tdur%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Empresa</FONT></TD>
+    <TD><%temp%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Asesor Externo</FONT></TD>
+    <TD><%taex%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Oficio de Presentación y Agradecimiento</FONT></TD>
+    <TD><%topr%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Solicitud de Revisor</FONT></TD>
+    <TD><%tsre%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Revisor</FONT></TD>
+    <TD><%trev%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Dictamen</FONT></TD>
+    <TD><%tdic%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Asesor Interno</FONT></TD>
+    <TD><%tain%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Reporte 1</FONT></TD>
+    <TD><%tre1%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Reporte 2</FONT></TD>
+    <TD><%tre2%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Reporte Final</FONT></TD>
+    <TD><%tref%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Asignación de Revisores del Informe Final</FONT></TD>
+    <TD><%trevfa%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Revisor de Informe final 1</FONT></TD>
+    <TD><%trevf1%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Revisor de Informe Final 2</FONT></TD>
+    <TD><%trevf2%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Calificación</FONT></TD>
+    <TD><%tcal%></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Liberación</FONT></TD>
+    <TD><%tofl%></TD>
+  </TR>
+</TABLE>
+<h1>RECOMENDACIONES:</h1>
+<h5>ES IMPORTANTE ASESORARSE, PARA REALIZAR UN PROYECTO DURANTE LA RESIDENCIA QUE SEA VIABLE PARA TITULACION. DE LO CONTRARIO UNA VEZ TERMINADA, TENDRIA QUE OPTAR POR OTRA OPCION DE TITULACION. </h5>
+<h5>SI SU PROYECTO ESTA EN REVISION, ES IMPORTANTE LOCALIZAR A SU REVISOR PARA DEFENDER SU PROYECTO. </h5>
+<h5>SU REVISOR PUEDE ASESORARLO PARA TENER UN PROYECTO VIABLE PARA TITULACION O ASESORARSE CON EL JEFE ACADEMICO CORRESPONDIENTE A SU CARRERA.</h5>
+<h5>EL REVISOR ASIGNADO PUEDE SUGERIR EL CAMBIO DE NOMBRE, MODIFICACIONES AL DIAGRAMA DE ACTIVIDADES, MAYOR DOCUMENTACION O ACLARACIONES AL MISMO, PARA DECIDIR SU DICTAMEN EL CUAL PUEDE SER:</h5>
+<h5>&quot;APROBADO SOLO PARA RESIDENCIA&quot;</h5>
+<h5>&quot;APROBADO CON OPCION A TITULACION&quot;</h5>
+<h5>&Oacute;</h5>
+<h5>&quot;RECHAZADO&quot;</h5>
+<h5>SI SU PROYECTO FUE APROBADO EN CUALQUIERA DE LAS 2 OPCIONES; ES IMPORTANTE CUMPLIR CON LOS PROCEDIMIENTOS ESTABLECIDOS, ACORDAR LAS VISITAS O INFORMES QUE EL ASESOR INTERNO REQUIERA PARA REVISAR, SUPERVISAR Y CONTAR CON LOS ELEMENTOS NECESARIOS PARA EVALUAR LA RESIDENCIA, ADEMAS DE LOS 2 REPORTES PARCIALES Y EL FINAL, SU ASESOR PUEDE REQUERIR REUNIONES EN PERIODOS MAS CORTOS. </h5>
+<h5>ES IMPORTANTE QUE LOS REPORTES PARCIALES Y FINAL, SEAN ENTREGADOS OPORTUNAMENTE, DE ACUERDO A LA PROGRAMACION REALIZADA EN EL DIAGRAMA DE ACTIVIDADES, ESTE ORGANIGRAMA DEBE DE SER FIRMADO POR SU ASESOR INTERNO Y EL JEFE ACADEMICO CORRESPONDIENTE, SOLO EN LOS PERIODOS DE CUMPLIMIENTO DE ESTA ACTIVIDAD, POSPONERLO O DEJARLO DE HACER ES CAUSA DE INCUMPLIMIENTO DE LA RESIDENCIA Y SU CALIFICACION O LIBERACION PUEDE NO SER FAVORABLE Y MUCHO MENOS PROMOVER EL PROYECTO PARA TITULACION. </h5>
+<h5>EL DESEMPE&Ntilde;O DURANTE SU RESIDENCIA Y LOS RESULTADOS A LA CONCLUSION DE SU PROYECTO, PUEDE REVERTIR A FAVOR O EN CONTRA LA OPCION DE TITULACION. </h5>
+</CENTER></FONT></FONT></FONT></CENTER></FONT></CENTER></FONT></FONT>
+</BODY></HTML>

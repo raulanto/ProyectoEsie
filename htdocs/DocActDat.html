@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<script language="Javascript" src="/intertec/js/refrescar.js"></script>
+
+<link href="/intertec/css/CalendarControl.css"      rel="stylesheet" type="text/css">
+<script src="/intertec/js/CalendarControl.js"        language="javascript"></script>
+</HEAD>
+
+<BODY>
+<H1><FONT COLOR="#0080C0"><CENTER>Datos Fijos</CENTER></H1>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080c0"><FONT COLOR="#ffffff">Nombre</FONT></TD>
+    <TD> 
+      <%tnom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Título</FONT></TD>
+    <TD> 
+      <%ttit%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Departamento</FONT></TD>
+    <TD> 
+      <%tdep%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Puesto</FONT></TD>
+    <TD> 
+      <%tpue%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Plazas</FONT> </TD>
+    <TD> 
+      <%tpla%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080c0" ><FONT COLOR="#ffffff">Ingreso</FONT>  </TD>
+    <TD> 
+      <%ting%>
+    </TD>
+  </TR>
+</TABLE>
+  
+<form method="post" onSubmit="return validar()" action="/cgi-bin/sie.pl" name="forma1">  
+<h1 align="center">Nacimiento</h1>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Abrev.Título</TD>
+    <TD><input name="tsig" size="06" type="text" maxlength="06" VALUE="<%tsig%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">RFC</TD>
+    <TD><input name="trfc" size="13" type="text" maxlength="13" VALUE="<%trfc%>"><a href="https://www.mi-rfc.com.mx/consulta-rfc-homoclave">NO CONOCES TU RFC?</a></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">CURP</TD>
+    <TD><input name="tcur" size="18" type="text" maxlength="18" VALUE="<%tcur%>"><a href="https://www.gob.mx/curp/">NO CONOCES TU CURP?</a></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Fecha de Nacimiento  (AAAAMMDD)</TD>
+    <TD><FONT SIZE=2><input type='text' name='tnac' size=8 maxlength=8 onChange="return validaCaptura(this,'fecha')" onfocus='showCalendarControl(this);' value=<%tnac%>></FONT></TD>
+  </TR>
+  <TR>     
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado de Nacimiento</TD>
+    <TD><%cLnae%></TD>
+  </TR>    
+  <TR>
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Municipio</TD>
+    <TD>
+      <DIV ID="divMunicN">
+      <%cLnam%>
+      </DIV>
+    </TD>
+  </TR>
+</TABLE>
+
+<h1 align="center">Domicilio Actual</h1>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Calle</TD>
+    <TD><input name="tcll" size="30" type="text" maxlength="30" VALUE="<%tcll%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Número</TD>
+    <TD><input name="tnum" size="10" type="text" maxlength="10" VALUE="<%tnum%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Colonia</TD>
+    <TD><input name="tcol" size="30" type="text" maxlength="30" VALUE="<%tcol%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Ciudad</TD>
+    <TD><input name="tciu" size="30" type="text" maxlength="30" VALUE="<%tciu%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">C.P.</TD>
+    <TD><input name="tcpo" size="05" type="text" maxlength="05" VALUE="<%tcpo%>"></TD>
+  </TR>
+  <TR>     
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado</TD>
+    <TD><%cEst%></TD>
+  </TR>    
+  <TR>
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Municipio</TD>
+    <TD>
+      <DIV ID="divMunicD">
+      <%cMun%>
+      </DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Teléfono Domicilio (con LADA)</TD>
+    <TD><input name="tte1" size="12" type="text" maxlength="12" VALUE="<%tte1%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Teléfono Celular (con LADA)</TD>
+    <TD><input name="tte2" size="12" type="text" maxlength="12" VALUE="<%tte2%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Correo Electrónico (minúsculas)</TD>
+    <TD><input name="tmai" size="40" type="text" maxlength="40" VALUE="<%tmai%>"></TD>
+  </TR> 
+</TABLE>
+  
+<h1 align="center">Otros Datos</h1>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Estado Civil</TD>
+    <TD><%cEci%></TD>
+  </TR>  
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Num. de Dependientes Económicos</TD>
+    <TD><input name="tdec" size="2" type="text" maxlength="2" VALUE="<%tdec%>"></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Cartilla Militar</TD>
+    <TD><input name="tcmi" size="10" type="text" maxlength="10" VALUE="<%tcmi%>"></TD>
+  </TR>
+</TABLE>
+<%cActDatos%>
+</form>
+</CENTER>
+</BODY>
+
+<script>
+//onChange="return validaCaptura(this,'fecha')"
+function validaCaptura(objeto,tipo)
+{   var validado=false;
+	if(tipo=='fecha') {	
+	    //validar fechas
+	    var actual=new Date().getFullYear()+1,menor=actual-80,fecha=objeto.value;
+	    if(fecha.length==10) {
+		   var year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+		   validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else if(fecha.length==8) {
+		   var year=fecha.substring(0,4), mes=fecha.substring(4,6), dia=fecha.substring(6,8);
+		   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else if(fecha.length==6) {
+		   var year=fecha.substring(0,2), mes=fecha.substring(2,4), dia=fecha.substring(4,6);
+		   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+		} 
+		else validado=false;
+	}
+	else if(tipo=="otro")
+	{   //validar otro tipo de dato
+	    validado=true;
+	}
+	
+	if(!validado)
+	{  alert("Este dato no es válido");
+	   objeto.setFocus;
+	}
+    return validado;
+}
+function validar()
+{   var validado=false;
+    
+	//validar fecha de ingreso
+	var objeto=document.forms["forma1"]["tnac"];
+	var actual=new Date().getFullYear()+1,menor=actual-80,fecha=objeto.value;
+	//year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+	//validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	if(fecha.length==10) {
+		var year=fecha.substring(0,4), diag1=fecha.substring(4,5), mes=fecha.substring(5,7), diag2=fecha.substring(7,8), dia=fecha.substring(8,10);
+		validado=((year>menor && year<actual) && diag1=="/" && (mes>"00" && mes<"13") && diag2=="/" && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else if(fecha.length==8) {
+	   var year=fecha.substring(0,4), mes=fecha.substring(4,6), dia=fecha.substring(6,8);
+	   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else if(fecha.length==6) {
+	   var year=fecha.substring(0,2), mes=fecha.substring(2,4), dia=fecha.substring(4,6);
+	   validado=((year>menor && year<actual) && (mes>"00" && mes<"13") && (dia>"00" && (mes=="02" && dia<"30") || (mes!="02" && dia<"32") ));
+	} 
+	else validado=false;
+	if(!validado)
+	{  alert("La fecha no es válida.");
+	   objeto.setFocus;
+	}	
+	return validado;
+}
+
+</script>
+</HTML>

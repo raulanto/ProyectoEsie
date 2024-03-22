@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Docentes</title>
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/intertec/css/sweetalert2.min.css" />
+    <script src="/intertec/js/sweetalert2.min.js"></script>
+	<script src="/intertec/js/funcionlista.js"></script>
+
+	<script language=JavaScript>	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false");
+	// --> 
+    function copiarEvidencias() {
+        Swal.fire({
+            title: '&iquest;Desea pegar desde el portapapeles?',
+			icon: 'question',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Pegar',
+            denyButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigator.clipboard.readText()
+                    .then(text => {
+                        var texto = text;
+                        var evidencias = texto.split("\r\n");
+                        evidencias.forEach((line, index) => {
+                            var evidencia = line.split("\t");
+                            var length = evidencia.length;							
+                            evidencia.forEach((cal, col) => {
+                                if (cal != undefined && cal != '') {
+                                    var campo = "cr" + (index + 1 < 10 ? "0" : "") + (index + 1) + (col + 1 < 10 ? "0" : "") + (col + 1);
+                                    var elem = document.getElementById(campo);
+                                    elem.value = cal;
+									elem.style.background="#ffffdd";
+                                    if (col > 0 && col < length - 1) {
+                                        sumatoria(elem);
+                                    }
+                                }
+                            })
+                        })
+                    })
+                    .catch(err => {
+                        console.log('Error ', err);
+                    })
+            } else if (result.isDenied) {
+                Swal.fire('Datos no pegados', '', 'info')
+            }
+        })
+    }
+    function sumatoria(e) {
+	    console.log(e);
+        var col = e.id.slice(4, 6);
+        var matriz = document.getElementsByName("pievap")[0].value;
+        var indicador = document.getElementById("total" + (col == "02" ? "por" : "indi") + (parseInt(col) - (col == "02" ? 1 : 2)));
+        var sumatoria = 0;
+        for (var i = 0; i < matriz; i++) {
+            var campo = "cr" + (i + 1 < 10 ? "0" : "") + (i + 1) + col;
+            var valor = document.getElementById(campo).value;
+            sumatoria = sumatoria + parseInt(valor);
+        }
+        var indicadorT = parseInt(document.getElementById("v" + (col == "02" ? "port" : "indi") + (parseInt(col) - (col == "02" ? 1 : 2))).innerText);
+        if (sumatoria == indicadorT) {
+            indicador.style.color = "green";
+        } else {
+            indicador.style.color = "red";
+        }
+        indicador.innerText = (sumatoria < 10 ? "0" : "") + sumatoria;
+    }	
+	</script>
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5 class="text-white">Sistema de Integraci&oacute;n Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Instrumentaci&oacute;n Did&aacute;ctica por Competencias</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">              
+						<!--start cuadro de datos superior -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-14 table-responsive">
+									<table class="table table-hover table-bordered table-sm">
+										<tr>
+											<td class="bg-light">Per&iacute;odo</td><td><strong><%tperiodo%></strong></td>
+											<td class="bg-light">Nombre</td><td colspan="3"><strong><%tnom%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light">Materia</td><td><strong><%tmatnom%></strong></td>
+											<td class="bg-light">Grupo</td><td><strong><%tgrupo%></strong></td>
+											<td class="bg-light">Plan</td><td><strong><%tcarnom%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="2">Horas Te&oacute;ricas-Pr&aacute;ctica-Cr&eacute;ditos</td><td colspan="4"><strong><%thoras%></strong></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--fin cuadro de datos superior -->
+						<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+							<!-- start tabla 1 -->
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="card">
+										<div class="card-body table-responsive">
+											<!-- start table-->
+											<table class="table table-bordered">
+												<thead>
+												  <tr style="line-height:1px; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="7">4.An&aacute;lisis por competencias espec&iacute;ficas</th></tr>
+												  <tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+													<th scope="col">4.1.Competencia</th>
+													<th scope="col">4.4.Actividades de Aprendizaje</th>									
+													<th scope="col">4.5.Actividades de Ense&ntilde;anza</th>
+													<th scope="col">4.7.Horas Te&oacute;rico-Pr&aacute;cticas</th>
+													<th scope="col">4.8.Indicadores de Alcance</th>
+													<th scope="col">4.9.Valor del Indicador %</th>
+												 </tr>
+												</thead>
+												<tbody>
+													  <%cTemCap%>
+												</tbody>
+											</table>
+											<!-- fin table-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- fin tabla 1 -->
+							<!-- start tabla 2 -->
+							<div class="row py-1">
+								<div class="col-sm-12">
+									<div class="card">
+										<div class="card-body table-responsive">
+											<!-- start table-->
+											<table class="table table-bordered">
+												<thead>
+													<tr style="line-height:1px; background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"><th scope="col" colspan="4">4.10.Niveles de Desempe&ntilde;o</th></tr> 
+													<tr style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+														<th scope="col">Desempe&ntilde;o</th>
+														<th scope="col">Nivel de desempe&ntilde;o</th>
+														<th scope="col">Indicadores de alcance</th>
+														<th scope="col">Valoraci&oacute;n n&uacute;merica</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr><td rowspan="4" style="vertical-align:middle;">Competencia alcanzada</td>
+														<td style="vertical-align:middle;">Excelente</td>
+														<td><textarea name='pidpap' cols='90' rows='7' readonly disabled>Cumple al menos cinco de los siguientes indicadores&#13;<%pridapa%></textarea></td>
+														<td style="vertical-align:middle;">95-100</td>
+													</tr>
+													<tr><td>Notable</td>
+														<td>Cumple cuatro de los indicadores definidos en el nivel de desempe&ntilde;o excelente</td>
+														<td>85-94</td>
+													</tr>
+													<tr>
+														<td>Bueno</td>
+														<td>Cumple tres de los indicadores definidos en el nivel de desempe&ntilde;o excelente</td>
+														<td>75-84</td>
+													</tr>
+													<tr>
+														<td>Suficiente</td>
+														<td>Cumple dos de los indicadores definidos en el nivel de desempe&ntilde;o excelente</td>
+														<td>70-74</td>
+													</tr>
+													<tr>
+														<td>Competencia no alcanzada</td><td>InSuficiente</td>
+														<td>No se cumplpe con el 100% de evidencias conceptuales, prodedimentales y actitudinales de los indicadores definidos en el nivel de desempe&ntilde;o excelente</td>
+														<td>NA (No Alcanzada)</td>
+													</tr>
+												</tbody>
+											</table>
+											<!-- fin table-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- fin tabla 2 -->
+							<!-- start tabla 3 -->					
+							<div class="row py-1">
+								<div class="col-sm-12">
+									<div class="card">
+										<div class="card-body table-responsive">
+											<!-- start table-->
+											<table class="table table-striped table-hover table-bordered">
+												<tbody>
+													<tr background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>"> 
+														<td>4.11.Matriz de Evaluaci&oacute;n</td>
+														<td><%cTemNmat%></td>
+														<td colspan="3"><div class="btn btn-warning" onclick="copiarEvidencias()">Pegar desde el Portapapeles</div></td>
+													</tr>										
+													<%cTemMat%>
+													<tr>
+														<td><%cTemBot%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%cTemReg%></td>
+													</tr>
+												</tbody>
+											</table>
+											<!-- fin table-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- fin tabla 3 -->					
+						</form>
+						<!-- start tabla 5-->
+						<div class="row py-1">
+							<div class="col-sm-12">
+								<div class="card">
+									<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+										<h6 class="m-0 font-weight-bold text-center">Video 1</h6>
+									</div>
+									<div class="ratio ratio-4x3">
+										<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/673525904?h=96765dee32&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"></iframe>
+									</div>
+								</div>
+							</div>                        
+						</div>
+						<!--fin tabla 5-->
+					</div>
+					<!-- fin cuerpo de la tarjeta-->
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

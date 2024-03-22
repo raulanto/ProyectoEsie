@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Datos del Estudiante</title>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>		
+	<style type="text/css">
+	<!--
+	tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small}
+	body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: smaller}
+	-->
+	</style>
+</head>
+<body bgcolor="#FFFFFF">
+
+<p><font size="2">Reinscripciones correspondientes al periodo:<b><%tperio%></b></font></p>
+
+<form method="post" action="/cgi-bin/sie.pl" name="forma1">
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">No. Control</td>
+      <td width="80%"><%cUsuario%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Alumno</td>
+      <td width="80%"><%cNombre%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Semestre</td>
+      <td width="80%"><%cSemestre%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Fecha de Reinscripciòn</td>
+      <td width="80%"><%cFechaIns%></td>
+    </tr>
+    <tr> 
+      <td height="13" width="20%">Hora de Reinscripción</td>
+      <td height="13" width="80%"><%cHoraIns%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Promedio</td>
+      <td width="80%"><%cPromedio%></td>
+    </tr>
+    <tr> 
+      <td>Especiales</td>
+      <td><%cEsp%></td>
+    </tr>
+    <tr> 
+      <td>Repetición</td>
+      <td><%cRep%></td>
+    </tr>
+    <tr> 
+      <td>Límites de Carga</td>
+      <td><%cMax%> Maxima <%cMin%>Mínima</td>
+    </tr>
+    <tr>
+      <td>Nota:</td>
+      <td><%cAviso2%></td>
+    </tr>
+  </table>
+
+  <h3 align="center">Carga Académica</h3>
+  <table width="100%" border="1">
+    <tr>
+      <td width="20%"><h3><%cSelLisMat%></h3></td>
+      <%cOtrCur%>
+    </tr>
+  </table>
+ <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#CCCCFF"> 
+      <td width="3%" height="28">&nbsp;</td>
+      <td height="28"><div align="center">Clave</div></td>
+      <td height="28"><div align="center">Materia</div></td>
+      <td height="28"><div align="center">Tipo</div></td>
+      <td height="28"><div align="center">Spd</div></td>
+      <td height="28"><div align="center">Lunes</div></td>
+      <td height="28"><div align="center">Martes</div></td>
+      <td height="28"><div align="center">Miercoles</div></td>
+      <td height="28"><div align="center">Jueves</div></td>
+      <td height="28"><div align="center">Viernes</div></td>
+      <td height="28"><div align="center">Sabado</div></td>
+      <td height="28"><div align="center">Domingo</div></td>
+      <td height="28"><div align="center">Cred.</div></td>
+    </tr>
+    <%cLisMat%>
+    <%cTotCred%>
+  </table>       
+  <table width="100%" border="1">
+    <tr>
+      <td width="50%">
+	<input type="submit" name="Eliminar" value="ELIMINAR" <%cHabEli%>>
+  	<input type="hidden" name="Opc" value="LISMAT">
+  	<input type="hidden" name="Control" value=<%cUsuario%>>
+  	<input type="hidden" name="Password" value=<%cPassword%>>
+  	<input type="hidden" name="psie" value=<%cpsie%>>
+  	<input type="hidden" name="dummy" value=0>
+	<strong>
+    	  <font face="Geneva, Arial, Helvetica, sans-serif">Este botón ELIMINA las materias seleccionadas</font>
+  	</strong>
+     </td>
+      <td width="50%"><h3>
+  	<!-- <input type="submit" name="Submit" value="IMPRIMIR" onClick="javascript:window.print();"> -->
+        <%cStrCar%></h3>
+       </td>
+    </tr>
+  </table>
+
+  <p>
+    <strong>
+      <font face="Geneva, Arial, Helvetica, sans-serif">ATENCION. Este botón BLOQUEA y no permite mas modificaciones a su horario</font>
+    </strong>
+    <td width="20%">
+      <input type="submit" name="Inscribir" value="FINALIZAR REINSCRIPCION" <%cHabilitado%>>
+    </td>
+  </p>
+
+  <h3 align="center">Solicitudes de Altas ó Bajas</h3>
+  <table width="100%" border="1">
+    <tr>
+      <td width="50%"><h3><%cSelAltas%></h3></td> 
+    </tr>
+  </table>
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#CCCCFF"> 
+      <td width="3%" height="28">&nbsp;</td>
+      <td height="28"><div align="center">Clave</div></td>
+      <td height="28"><div align="center">Materia</div></td>
+      <td height="28"><div align="center">Tipo</div></td>
+      <td height="28"><div align="center">Spd</div></td>
+      <td height="28"><div align="center">Lunes</div></td>
+      <td height="28"><div align="center">Martes</div></td>
+      <td height="28"><div align="center">Miercoles</div></td>
+      <td height="28"><div align="center">Jueves</div></td>
+      <td height="28"><div align="center">Viernes</div></td>
+      <td height="28"><div align="center">Sabado</div></td>
+      <td height="28"><div align="center">Domingo</div></td>
+      <td height="28"><div align="center">Cred.</div></td>
+    </tr>
+    <%cAltas%>
+  </table>       
+  <input type="submit" name="EliAlt" value="ELIMINAR" <%cHabilitado%>>
+  <strong>
+    <font face="Geneva, Arial, Helvetica, sans-serif">ATENCION. Este botón ELIMINA de su solicitud de ALTAS O BAJAS las materias seleccionadas</font>
+  </strong>
+</form> 
+
+<div align="justify">
+
+  <p><strong><font size="+1" face="Geneva, Arial, Helvetica, sans-serif">Antes de CARGAR MATERIAS, le sugerimos leer las siguientes indicaciones.</font></strong></p>
+  <div align="justify">
+    <table width="100%"  border="1">
+      <tr>
+        <td width="40%" height="507" valign="top">
+        <div align="justify">
+          <p align="left"><strong>CARGAR MATERIAS</strong></p>
+        </div>
+        <p align="justify">El sistema realizara las siguientes validaciones:<br>
+          <strong><font size="4">*</font></strong>No se encuentre en situaci&oacute;n de baja.<br>
+          <strong><font size="4">*</font></strong>No Tengan adeudos con alg&uacute;n departamento.<br>
+          <strong><font size="4">*</font></strong>No exceda de los 12 semestres autorizados.<br>
+          <strong><font size="4">*</font></strong>Que sea su fecha y hora en adelante, es decir podr&aacute; acceder a partir de esa fecha y hora en el momento que guste, reacuerde que los espacios en grupos son limitados.<br>
+      	  <strong><font size="4">*</font></strong>El sistema determinar&aacute; la carga m&aacute;xima que se autorice en base a los especiales y materias de repetici&oacute;n de curso.<br>
+      	  <strong><font size="4">*</font></strong>Selecciona los grupos de su plan de estudios.<br>
+      	  <strong><font size="4">*</font></strong>Si el alumno tiene modulo de especialidad capturado en el sistema seleccionar&aacute; los grupos que correspondan a este m&oacute;dulo <br>
+      	  <strong><font size="4">*</font></strong>Los grupos cerrados o que no tienen espacios los omite.<br>
+      	  <font size="4"><strong>*</strong></font>Validad si la materia requiere % de cr&eacute;ditos de avance.<br>
+      	  <font size="4"><strong>*</strong></font>Omite la materia sino cumple con alg&uacute;n prerrequisito, es decir, hay materias que requiere de la acreditaci&oacute;n de otras y el sistema verifica que en su kardex el alumno las tenga acreditadas.<br>
+      	  <font size="4"><strong>*</strong></font>Omite las materias ya acreditadas<br>
+      	  <font size="4"><strong>*</strong></font>Omite las materias ya seleccionadas<br>
+      	  <font size="4"><strong>*</strong></font>Omite las materias que deba de cursar en situaci&oacute;n de examen especial<br>
+      	  <font size="4"><strong>*</strong></font>Indica con una <strong>&quot;E&quot;</strong> las materias que se cursaran en curso especial, con una <strong>&quot;R&quot;</strong> las materias que se cursaran en repetici&oacute;n de curso y con un <strong>&quot;N&quot;</strong> las de situaci&oacute;n de curso normal.<br>
+      	  <font size="4"><strong>*</strong></font>Durante la captura hay al menos 100 personas seleccionando materias, por lo tanto podr&aacute;n cerrase los grupos si toman su decisi&oacute;n antes que usted.<br>
+      	  <strong>Nota :</strong>Por lo anterior los grupos que no aparezcan en la lista es por que no cumplen con algunos de los requisitos anteriores.</p>      </td>
+          <td width="13%" valign="top"><p><strong>ELIMINAR</strong> </p>
+          <p>Elimina de su horario las materias seleccionadas en las casillas del horario elegido.<br>            
+            <font size="4"><strong>*</strong></font>Libera el espacio en el grupo eliminado</p></td>
+          <td width="21%" valign="top"><p align="justify"><strong>FINALIZAR </strong>
+            <strong>REINSCRIPCION</strong> </p>
+          <p align="justify">Guarda definitivamente su horario y no permitir&aacute; ning&uacute;n ajuste posterior, por lo que es muy importante que este seguro del horario elegido y no requerir solicitar un alta. Al seleccionar este bot&oacute;n su horario quedara guardado y seguro. En caso de requerir algun ajuste tendr&aacute; que solicitar apoyo al personal de divisi&oacute;n de Estudios Profesionales</p></td>
+          <td width="17%" valign="top"><p align="left"><strong>SOLICITAR ALTAS</strong></p>
+          <p align="justify">En caso de requerir algun ajuste en su carga, puede crear una solicitud y su Coordinador de Carrera atender&aacute; esta posibilidad y aqui mismo podr&aacute; darle seguimiento. Verifique primero que esta materia no sea elegible en CARGAR MATERIAS y de solicitarla no olvide captura el motivo. Use las siguientes palabras como inicio de la Descripción: CERRADO, REEMPLAZO, SEMESTRE, PREREQUISITO, PORCENTAJE, CREDITOS. Se analiza cada caso, no todo procede, por lo cual trate de elegir su mejor CARGA DE MATERIAS</p>
+          <p align="justify"></p></td>
+          <td width="9%" valign="top"><p align="left"><strong>CUOTA DE REINSCRIPCION</strong></p>
+          <p align="justify">Imprima su Ficha de Dep&oacute;sito, solo en caso de que la instituci&oacute;n cuente con el servicio de Dep&oacute;sitos Referenciados.</p>
+          <p align="justify"></p></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<HTML>
+<HTML>
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<BODY>
+<H1><FONT COLOR="#0080C0"><CENTER>
+  Datos Académicos del Alumno
+</CENTER></H1>
+<CENTER>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Nombre del Alumno</TD>
+    <TD> 
+      <%tnom%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Carrera</TD>
+    <TD> 
+      <%tcar%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Plan de Esutios</TD>
+    <TD> 
+      <%tpla%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Módulo de Especialidad</TD>
+    <TD> 
+      <%tesp%>
+    </TD>
+  </TR>
+</TABLE>
+
+<h2 align="center">Datos del Servicio</h2>
+
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+  <TR> 
+    <TD BGCOLOR="#0080C0"><FONT COLOR="#FFFFFF">Folio</TD>
+    <TD> 
+      <%tfol%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Código</TD>
+    <TD> 
+      <%tcod%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Descripción</TD>
+    <TD> 
+      <%tdes%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Importe</TD>
+    <TD> 
+      <%timp%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Vigencia</TD>
+    <TD> 
+      <%tvig%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Solicitado</TD>
+    <TD> 
+      <%tfec%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Validado</TD>
+    <TD> 
+      <%tval%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Trámite</TD>
+    <TD> 
+      <%ttra%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Listo</TD>
+    <TD> 
+      <%tlis%>
+    </TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Entregado</TD>
+    <TD> 
+      <%tent%>
+    </TD>
+  </TR>
+</TABLE>
+  
+<form method="post" onSubmit="return validar()" action="/cgi-bin/sie.pl" name="forma1">  
+<h3 align="center">Datos del Banco</h3>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>  
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Sucursal</TD>
+    <TD><input name="tsub" size="10" type="text" maxlength="10" VALUE=<%tsub%>></TD>
+  </TR>
+  <TR> 
+    <TD BGCOLOR="#0080C0" ><FONT COLOR="#FFFFFF">Autorización</TD>
+    <TD><input name="taub" size="20" type="text" maxlength="20" VALUE=<%taub%>></TD>
+  </TR>
+</TABLE>
+<%cActDatos%>
+</form>
+</CENTER>
+</BODY>
+</HTML>

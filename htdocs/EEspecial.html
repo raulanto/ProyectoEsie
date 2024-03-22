@@ -1,0 +1,44 @@
+<HTML>
+<BODY>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<H2><FONT COLOR="#0080C0"><CENTER>Exámenes Especiales del Periodo: <b><%tperio%></b></CENTER></H2>
+<TABLE BORDER='1' WIDTH=80% CELLSPACING=0 CELLPADDING=5>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>No.Control<TD><%cUsuario%></TR>
+    <TR><TD BGCOLOR="#0080C0"><FONT COLOR=#FFFFFF>Nombre<TD><%tnom%></TR>
+</TABLE>
+<BR>
+<TABLE BORDER='1' WIDTH=85% CELLSPACING=0 CELLPADDING=5>
+	<TR BGCOLOR="#0080C0">
+		<TD width="10%" height="20"><FONT COLOR=#FFFFFF>Clave</TD>
+		<TD width="20%" height="20"><FONT COLOR=#FFFFFF>Nombre</TD>
+		<TD width="05%" height="20"><FONT COLOR=#FFFFFF>Tipo</TD>
+		<TD width="20%" height="20"><FONT COLOR=#FFFFFF>Aplicadores</TD>
+		<TD width="10%" height="20"><FONT COLOR=#FFFFFF>Fechas</TD>
+		<TD width="10%" height="20"><FONT COLOR=#FFFFFF>Horas</TD>
+		<TD width="05%" height="20"><FONT COLOR=#FFFFFF>Aulas</TD>
+		<TD width="05%" height="20"><FONT COLOR=#FFFFFF>Calif</TD>
+       </TR>
+<%cEspecial%>
+</TABLE>
+</BODY>
+</HTML>

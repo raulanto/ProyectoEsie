@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="iso-8859-15">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sie Aspirantes</title>
+	<link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/intertec/css/navbar.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="/intertec/fontawesome/css/brands.css">
+  	<link rel="stylesheet" href="/intertec/fontawesome/css/solid.css">
+	<script src="/intertec/js/jquery-3.6.0.min.js"></script>
+	<script src="/intertec/js/navbar.js"></script>
+	<script language=JavaScript>
+	<!--
+
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>
+</head>
+<style>
+	body {
+		background-color: <%dinsti.swmenb%>;
+	}
+
+	:root {
+		--color-principal: <%dinsti.swmenb%>;
+		--color-activo: <%dinsti.swtapb%>;
+	}
+</style>
+<body>
+	<div id="accordian">
+		<ul class="show-dropdown main-navbar">
+			<div class="selector-active">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+			<li class="active">
+				<span onclick="esconder()"><i class="fa fa-bars"></i>Menú</span>
+			</li>
+			<%cmenu%>
+			<li>
+				<span onClick="javascript:parent.principal.location='/cgi-bin/sie.pl?Opc=CSESIONFIC&Control=<%cUsuario%>&Password=<%cPassword%>&psie=<%cpsie%>&dummy=0'"><i class="fa fa-power-off"></i><strong>Salir</strong></span>
+			</li>
+
+		</ul>
+	</div>
+</body>
+
+<script src="/intertec/js/navbarf.js"></script>
+
+</html>

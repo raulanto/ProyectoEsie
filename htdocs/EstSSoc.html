@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="iso-8859-15">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sie Estudiante</title>
+    <link rel="icon" href="/intertec/img/sie256.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/intertec/css/bootstrap.min.css" />
+	<script language=JavaScript>
+	<!--
+	//Disable right click script III- By Renigade (renigade@mediaone.net)
+	//For full source code, visit http://www.dynamicdrive.com
+	var message="";
+	///////////////////////////////////
+	function clickIE() {if (document.all) {(message);return false;}}
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) {
+	if (e.which==2||e.which==3) {(message);return false;}}}
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+	document.oncontextmenu=new Function("return false")
+	// --> 
+	</script>	
+</head>
+<style>body{background-color: <%dinsti.swtapb%>}</style>
+<body>
+	<!-- barra superior-->
+    <div class="row mt-4 mb-5">
+        <nav class="navbar fixed-top navbar-light justify-content-center" style="background-color: <%dinsti.swtitb%>; color: <%dinsti.swtitc%>">
+            <h5>Sistema de Integración Escolar (SIE)</h5>
+        </nav>
+    </div>
+    <!-- start contenido -->
+    <div class="container-fluid">
+        <div class="row py-1">
+			<div class="col-lg-12 mb-4">
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h5 class="m-0 font-weight-bold text-secondary text-center">Servicio Social</h5>
+					</div>
+					<!-- cuerpo de la tarjeta-->
+					<div class="card-body">    
+						<!-- container -->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 table-responsive">
+									<table class="table table-bordered table-hover table-sm">
+										<tr>
+											<td class="bg-light" colspan="1">No. Control</td><td colspan="2"><strong><%cusuario%></strong></td>
+											<td class="bg-light" colspan="1">Nombre</td><td colspan="5"><strong><%tnom%></strong></td>
+											<td class="bg-light" colspan="1">CURP</td><td colspan="2"><strong><%tcur%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Extensión</td><td colspan="3"><strong><%text%></strong></td>
+											<td class="bg-light" colspan="1">Modalidad</td><td colspan="3"><strong><%tsis%></strong></td>
+											<td class="bg-light" colspan="1">Carrera</td><td colspan="3"><strong><%tcar%></strong></td>
+										</tr>
+										<tr>
+											<td class="bg-light" colspan="1">Plan</td><td colspan="5"><strong><%tpla%></strong></td>
+											<td class="bg-light" colspan="1">Especialidad</td><td colspan="5"><strong><%tesp%></strong></td>
+										</tr>								
+										<tr>
+											<td class="bg-light" colspan="1">Período</td><td colspan="4"><strong><%prpdo%></strong></td>
+											<td class="bg-light" colspan="1">Materias</td><td colspan="1"><strong><%prmat%></strong></td>
+											<td class="bg-light" colspan="1">Créditos</td><td colspan="4"><strong><%prcre%></strong></td>
+										</tr>
+									</table>
+								</div>				  
+							</div>
+						</div>
+						<!-- container -->			
+						<form method="post" action="/cgi-bin/sie.pl" name="forma1">						
+							<!-- datos personales -->
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+											<h6 class="m-0 fw-bold text-center">Datos del Programa</h6>
+										</div>
+										<div class="card-body">	
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Dependencia o Empresa</label>
+													<%cEmp%>
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Área (Elija Dependencia)</label>
+													<DIV ID="divArea">
+														<%cAre%>
+													</DIV>
+												</div>
+											</div>								
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Programa (Elija Área)</label>
+													<DIV ID="divProgr">
+														<%cEsc%>
+													</DIV>
+													<%meesc%>
+												</div>                             
+											</div>
+
+											<div class="row">
+												<div class="col-md-8">
+													<label for="inputAbre" class="fw-bold">Calle</label>
+													<input name="tcll" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tcll%>">
+												</div>
+												<div class="col-md-4">
+													<label for="inputAbre" class="fw-bold">No</label>
+													<input name="tnum" class="form-control" size="10" type="text" maxlength="10" VALUE="<%tnum%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Colonia</label>
+													<input name="tcol" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tcol%>">
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Ciudad</label>
+													<input name="tciu" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tciu%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-4">
+													<label for="inputAbre" class="fw-bold">Cp</label>
+													<input name="tcpo" class="form-control" size="05" type="text" maxlength="05" VALUE="<%tcpo%>">
+												</div>
+												<div class="col-md-8">
+													<label for="inputAbre" class="fw-bold">Correo Electrónico</label>
+													<input name="tmai" class="form-control" size="40" type="text" maxlength="40" VALUE="<%tmai%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Teléfono 1</label>
+													<input name="tte1" class="form-control" size="12" type="text" maxlength="12" VALUE="<%tte1%>">
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Teléfono 2</label>
+													<input name="tte2" class="form-control" size="12" type="text" maxlength="12" VALUE="<%tte2%>">
+												</div>								
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+											<h6 class="m-0 fw-bold text-center">Datos del Tutor</h6>
+										</div>
+										<div class="card-body">	
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Tutor</label>
+													<input name="ttno" class="form-control" size="40" type="text" maxlength="40" VALUE="<%ttno%>">
+												</div>
+											</div>        									
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Estado</label>
+													<%cTmue%>
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Municipio</label>
+													<DIV ID="divMunicT">
+														<%cTmum%>
+													</DIV>
+												</div>
+											</div>								
+											<div class="row">
+												<div class="col-md-8">
+													<label for="inputAbre" class="fw-bold">Calle</label>
+													<input name="ttcl" class="form-control" size="30" type="text" maxlength="30" VALUE="<%ttcl%>">
+												</div>
+												<div class="col-md-4">
+													<label for="inputAbre" class="fw-bold">No</label>
+													<input name="ttnu" class="form-control" size="10" type="text" maxlength="10" VALUE="<%ttnu%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Colonia</label>
+													<input name="ttco" class="form-control" size="30" type="text" maxlength="30" VALUE="<%ttco%>">
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Ciudad</label>
+													<input name="ttci" class="form-control" size="30" type="text" maxlength="30" VALUE="<%ttci%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-4">
+													<label for="inputAbre" class="fw-bold">Cp</label>
+													<input name="ttcp" class="form-control" size="05" type="text" maxlength="05" VALUE="<%ttcp%>">
+												</div>
+												<div class="col-md-8">
+													<label for="inputAbre" class="fw-bold">Correo Electrónico</label>
+													<input name="ttmai" class="form-control" size="40" type="text" maxlength="40" VALUE="<%ttmai%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Teléfono Domicilio</label>
+													<input name="ttte1" class="form-control" size="12" type="text" maxlength="12" VALUE="<%ttte1%>">
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Teléfono Celular</label>
+													<input name="ttte2" class="form-control" size="12" type="text" maxlength="12" VALUE="<%ttte2%>">
+												</div>								
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Centro de Trabajo</label>
+													<input name="ttce" class="form-control" size="40" type="text" maxlength="40" VALUE="<%ttce%>">
+												</div>
+											</div>        
+										</div>
+									</div>
+								</div>
+								<!-- Fin datos personales -->							
+								<!-- Datos de Procedencia -->
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+											<h6 class="m-0 fw-bold text-center">Estudio Previo</h6>
+										</div>
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Estado</label>
+													<%cEstE%>
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Municipio</label>
+													<DIV ID="divMunicE">
+														<%cMunE%>
+													</DIV>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Escuela (elija municipio)</label>
+													<DIV ID="divEscue">
+														<%cEsc%>
+													</DIV>
+													<%meesc%>
+												</div>                             
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<label for="inputAbre" class="fw-bold">Año de Egreso</label>
+													<input name="tegr" class="form-control" size="4" type="text" maxlength="4" VALUE="<%tegr%>">
+												</div>
+												<div class="col-md-4">
+													<label for="inputAbre" class="fw-bold">Promedio (Escala 100)</label>
+													<input name="tpro" class="form-control" size="3" type="text" maxlength="3" VALUE="<%tpro%>">
+												</div>
+												<div class="col-md-5">
+													<label for="inputAbre" class="fw-bold">Área</label>
+													<%cAre%>
+												</div>
+											</div>
+										</div>								
+									</div>
+									<div class="card">
+										<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+											<h6 class="m-0 fw-bold text-center">Datos Preventivos</h6>
+										</div>
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">No. Imss o NSS</label>
+													<input name="tsmea" class="form-control" size="15" type="text" maxlength="15" VALUE="<%tsmea%>"><a href="http://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS">OBTENER NUMERO DE SEGURIDAD SOCIAL NSS</a>
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Clínica de Atención</label>
+													<input name="tsmei" class="form-control" size="30" type="text" maxlength="30" VALUE="<%tsmei%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<label for="inputAbre" class="fw-bold">Tipo de Sangre</label>
+													<input name="ttsa" class="form-control" size="3" type="text" maxlength="3" VALUE="<%ttsa%>">
+												</div>
+												<div class="col-md-9">
+													<label for="inputAbre" class="fw-bold">Especifique si padece alguna alergia</label>
+													<input name="tale" class="form-control" size="60" type="text" maxlength="60" VALUE="<%tale%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Especifique si ha tenido tratamientos en el área psicológica o psiquiátrica</label>
+													<input name="tpsi" class="form-control" size="60" type="text" maxlength="60" VALUE="<%tpsi%>">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<label for="inputAbre" class="fw-bold">Discapacidad</label>
+													<%cDis%>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" style="background-color: <%dinsti.swtabb%>; color: <%dinsti.swtabc%>">
+											<h6 class="m-0 fw-bold text-center">Otros Datos</h6>
+										</div>
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Grupo Indígena</label>
+													<%cGin%>
+												</div>
+												<div class="col-md-6">
+													<label for="inputAbre" class="fw-bold">Lengua Indígena</label>
+													<%cLin%>
+												</div>
+											</div>								
+										</div>
+									</div>
+								</div>
+								<!-- Fin Datos Preventivos-->
+							
+								<!-- boton modificar datos -->								
+								<div class="container-fluid h-100"> 
+									<div class="row w-100 align-items-center">
+										<div class="col text-center">
+											<br>
+											<%cboton%>
+											<p>VERIFIQUE QUE SUS DATOS SEAN CORRECTOS Y EN MAYÚSCULAS</p>
+											<p>EL RFC SERA UTILIZADO PARA GENERAR LA FACTURA ELECTRÓNICA EN CASO DE SOLICITARLA</p>
+											<p>NUESTRO AVISO DE PRIVACIDAD INTEGRAL LO PODRÁ CONSULTAR EN LA PÁGINA DE LA INSTITUCIÓN</p>								
+										</div>	
+									</div>    
+								</div>
+								<!-- Termina Boton -->
+							</div>	
+						</form>										
+					</div>
+					<!-- termina cuerpo de la tarjeta-->
+				</div>
+            </div>
+		</div>
+    </div>
+    <!-- fin contenido -->
+</body>
+</html>

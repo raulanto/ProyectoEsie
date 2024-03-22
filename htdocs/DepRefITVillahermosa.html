@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Horario</title>
+
+<script language=JavaScript>
+<!--
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+///////////////////////////////////
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small}
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: smaller}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<p><font size="2">Reinscripciones correspondientes al periodo: <b><%tperio%></b></font></p>
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">No. Control</td>
+      <td width="80%"><%cUsuario%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Alumno</td>
+      <td width="80%"><%cNombre%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Carrera</td>
+      <td width="80%"><%cCarrera%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Semestre</td>
+      <td width="80%"><%cSemestre%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Reinscripción</td>
+      <td width="80%"><%cFechaIns%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Hora</td>
+      <td width="80%"><%cHoraIns%></td>
+    </tr>
+  </table>
+
+  <p></p>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">DEPOSITAR EN</td>
+      <td width="80%"><%cBanco%></td>
+    </tr>
+
+    <tr> 
+      <td width="20%">Sucursal</td>
+      <td width="80%"><%cSucursal%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Cuenta</td>
+      <td width="80%"><%cCuenta%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Concepto</td>
+      <td width="80%"><%cConcepto%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Importe</td>
+      <td width="80%"><%cImporte%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Fecha Límite</td>
+      <td width="80%"><%cFecLim%></td>
+    </tr>
+  </table>
+
+  <p></p>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">Referencia 01 </td>
+      <td width="80%"><%cReferencia1%></td>
+    </tr>
+    <tr> 
+      <td width="20%">Referencia 02 </td>
+      <td width="80%"><%cReferencia2%></td>
+    </tr>
+  </table>
+
+
+  <p></p>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%">ADVERTENCIA</td>
+      <td width="80%"><p align="justify">IMPRIMA esta ficha de datos. Se requiere estas referencias que serán validadas por el banco. Deberá realizar su depósito al menos un dia antes de la fecha de su Reinscripción para que el pago sea validado a tiempo. Actualice correctamente en Datos Generales su dirección, teléfonos y correo electrónico, ya que su factura electrónica será elaborada con estos datos y enviada a su correo electrónico. Verifique su vigencia en Datos Generales y los adeudos en la opción Adeudos a Deptos, ya que si no es alumno vigente o tiene adeudos no podrá reinscribirse.</p></td>
+    </tr>
+  </table>
+
+</body>
+</html>
