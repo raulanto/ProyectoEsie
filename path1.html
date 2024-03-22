@@ -16,7 +16,7 @@
     <script language="Javascript" src="intertec/js/refrescar2.js"></script>
     <script src="intertec/js/funcionconfirmar.js"></script>
 
-    <script language="JavaScript">	<!-
+    <script language="JavaScript">
 
 //Disable right click script III- By Renigade (renigade@mediaone.net)
 //For full source code, visit http://www.dynamicdrive.com
@@ -33,6 +33,21 @@ else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 
 document.oncontextmenu=new Function("return false")
 // -->
+
+document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("agregar-fila").addEventListener("click", function() {
+            var table = document.getElementById("Tabla1");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+            cell1.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+            cell2.innerHTML = '<textarea class="form-control form-control-sm" cols="50" rows="2"></textarea>';
+            cell3.innerHTML = '<input class="form-control form-control-sm" type="date" data-mask="EF99EF99" value="" name="c" />';
+        });
+    });
+
     </script>
     <style>
         body {
@@ -95,44 +110,46 @@ document.oncontextmenu=new Function("return false")
                                                     <th scope="col">Actividad</th>
                                                     <th scope="col">Descripción</th>
                                                     <th scope="col">Fecha</th>
+                                                    <th> <span class="btn btn-outline-secondary btn-sm" id="agregar-fila">Agregar</span></th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="Tabla1">
                                                     <tr>
                                                         <td><input class="form-control form-control-sm" type="text"
                                                                 data-mask="EF99EF99" value="Reunion 1" name="c"
                                                                 id="cr0101" maxlength="8">
+                                        
+                                                        </td>
+                                                        <td><textarea class="form-control form-control-sm" cols="50"
+                                                                rows="2">Aplica los modelos matemáticos básicos y los modelos de color utilizados en objetos bidimensionales y tridimensionales</textarea>
+                                                        </td>
+                                                        <td><input class="form-control form-control-sm" type="date" data-mask="EF99EF99"
+                                                                value="21/03/2024" name="c" id="cr0101">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- fin table-->
                                         </div>
-                                        </td>
-                                        <td><textarea class="form-control form-control-sm" cols="50"
-                                                rows="5">Aplica los modelos matemáticos básicos y los modelos de color utilizados en objetos bidimensionales y tridimensionales</textarea>
-                                        </td>
-                                        <td><input class="form-control form-control-sm" type="date" data-mask="EF99EF99"
-                                                value="21/03/2024" name="c" id="cr0101" maxlength="8">
                                     </div>
-                                    </td>
-                                    </tr>
-                                    </tbody>
-                                    </table>
-                                    <!-- fin table-->
-                                </div>
-                                <div class="card-footer">
-                                    <ul>
-                                        <li>Se recomienda que las sesiones individuales se realicen en las horas de
-                                            apoyo a la docencia, empatándolas con las horas libres de los tutorados
-                                            (as).</li>
-                                        <li>Acudir con el jefe de Departamento Académico o Coordinador de Tutoría del
-                                            Departamento Académico si tiene alguna duda o requiere apoyo.</li>
-                                        <li>Para la obtención de materiales necesarios, acudir con el jefe de
-                                            Departamento Académico o Coordinador (a) de tutoría del Departamento
-                                            Académico.</li>
-                                    </ul>
                                 </div>
                             </div>
+                        </form>
+                        <!-- fin tabla 1 -->
+                        <div class="card-footer">
+                            <ul>
+                                <li>Se recomienda que las sesiones individuales se realicen en las horas de
+                                    apoyo a la docencia, empatándolas con las horas libres de los tutorados
+                                    (as).</li>
+                                <li>Acudir con el jefe de Departamento Académico o Coordinador de Tutoría del
+                                    Departamento Académico si tiene alguna duda o requiere apoyo.</li>
+                                <li>Para la obtención de materiales necesarios, acudir con el jefe de
+                                    Departamento Académico o Coordinador (a) de tutoría del Departamento
+                                    Académico.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                </form>
-                <!-- fin tabla 1 -->
             </div>
             <!-- fin cuerpo de la tarjeta-->
         </div>
