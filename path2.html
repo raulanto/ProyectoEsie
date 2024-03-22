@@ -46,6 +46,25 @@
 
         document.oncontextmenu = new Function("return false");
         // -->
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("agregar-fila").addEventListener("click", function() {
+            var table = document.getElementById("Tabla1");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            
+            cell1.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+            cell2.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+            cell3.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+            cell4.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+            cell5.innerHTML = '<textarea class="form-control form-control-sm" cols="10" rows="2"></textarea>';
+        });
+    });
     </script>
     <style>
         body {
@@ -124,10 +143,10 @@
                                                             AREA CANALIZADA (RAZON POR LA CUAL FUE
                                                             CANALIZADO)
                                                         </th>
-                                                        <th></th>
+                                                        <th> <span class="btn btn-outline-secondary btn-sm" id="agregar-fila">Agregar</span></th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="Tabla1">
                                                     <tr>
                                                         <td>
                                                             <input class="form-control form-control-sm" type="text"
@@ -150,8 +169,8 @@
                                                                 maxlength="8" />
                                                         </td>
                                                         <td><textarea class="form-control form-control-sm" cols="10"
-                                                            rows="2"></textarea>
-                                                    </td>
+                                                                rows="2"></textarea>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -164,7 +183,7 @@
                                                     actividades de cada tutorado.
                                                 </li>
                                                 <li>
-                                                    Este reporte deberá ser llenado por el tutor. 
+                                                    Este reporte deberá ser llenado por el tutor.
                                                 </li>
 
                                                 <li>
@@ -262,7 +281,8 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr style="background-color: #bc955c; color: #ffffff">
-                                                        <th scope="col">SI EXISTIERA ALUMNOS DE BAJA DEFINITIVA, Y SE CONOCEN LAS CAUSAS, DESCRIBIRLO BREVEMENTE</th>
+                                                        <th scope="col">SI EXISTIERA ALUMNOS DE BAJA DEFINITIVA, Y SE
+                                                            CONOCEN LAS CAUSAS, DESCRIBIRLO BREVEMENTE</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
