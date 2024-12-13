@@ -64,6 +64,33 @@
             cell4.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
             cell5.innerHTML = '<textarea class="form-control form-control-sm" cols="10" rows="2"></textarea>';
         });
+        document.getElementById("agregar-fila2").addEventListener("click", function() {
+            var table = document.getElementById("Tabla2");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+
+            
+            cell1.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+
+        });
+        document.getElementById("agregar-fila3").addEventListener("click", function() {
+            var table = document.getElementById("Tabla3");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+
+            
+            cell1.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+
+        });
+        document.getElementById("agregar-fila4").addEventListener("click", function() {
+            var table = document.getElementById("Tabla4");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+
+            
+            cell1.innerHTML = '<input class="form-control form-control-sm" type="text" data-mask="EF99EF99" value="" name="c" maxlength="8" />';
+
+        });
     });
     </script>
     <style>
@@ -208,9 +235,13 @@
                                                 <thead>
                                                     <tr style="background-color: #bc955c; color: #ffffff">
                                                         <th scope="col">Tutorados: Baja temporal</th>
+                                                        <th> <span class="btn btn-outline-secondary btn-sm" id="agregar-fila2">Agregar</span></th>
+
                                                     </tr>
+
+
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="Tabla2">
                                                     <td>
                                                         <input class="form-control form-control-sm" type="text"
                                                             data-mask="EF99EF99" value="" name="c" id="cr0101"
@@ -245,9 +276,13 @@
                                                 <thead>
                                                     <tr style="background-color: #bc955c; color: #ffffff">
                                                         <th scope="col">Tutorados: Baja Definitiva</th>
+                                                        <th> <span class="btn btn-outline-secondary btn-sm" id="agregar-fila3">Agregar</span></th>
+
                                                     </tr>
+
+
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="Tabla3">
                                                     <td>
                                                         <input class="form-control form-control-sm" type="text"
                                                             data-mask="EF99EF99" value="" name="c" id="cr0101"
@@ -273,6 +308,7 @@
                                     </div>
                                 </div>
                             </section>
+
                             <section class="row py-1">
                                 <div class="col-sm-12">
                                     <div class="card">
@@ -283,9 +319,11 @@
                                                     <tr style="background-color: #bc955c; color: #ffffff">
                                                         <th scope="col">SI EXISTIERA ALUMNOS DE BAJA DEFINITIVA, Y SE
                                                             CONOCEN LAS CAUSAS, DESCRIBIRLO BREVEMENTE</th>
+                                                            <th> <span class="btn btn-outline-secondary btn-sm" id="agregar-fila4">Agregar</span></th>
+
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="Tabla4">
                                                     <td>
                                                         <input class="form-control form-control-sm" type="text"
                                                             data-mask="EF99EF99" value="" name="c" id="cr0101"
